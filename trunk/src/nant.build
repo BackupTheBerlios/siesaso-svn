@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project xmlns="http://nant.sf.net/release/0.85-rc3/nant.xsd"
+         name="SieSaSoPackage"
+         default="complete">
+
+    <!--~~~~~~~~~~~~~~~~~
+         Konfiguration
+      ~~~~~~~~~~~~~~~~~-->
+
+    <!-- Externe Tasks laden -->
+    <loadtasks assembly="libs\Dotnetuc.NantContrib.dll" />
+
+    <!-- NAnt Konfiguration -->
+    <property name="nant.settings.currentframework" value="net-2.0" />
+
+    <!-- Systemkonfiguration -->
+    <property name="sysWinDir"     value="${environment::get-variable('SystemRoot')}"/>
+    <property name="sysProgDir"    value="${environment::get-variable('ProgramFiles')}"/>
+
+    <!-- Externe Tools -->
+    <property name="msbuild" value="${sysWinDir}\Microsoft.NET\Framework\v2.0.50727\msbuild.exe" />
+    <property name="simian"  value="${sysProgDir}\simian-2.2.11\bin\simian-2.2.11.exe" />
+
+    <!-- Parameter für die weitere Verwendung -->
+    <property name="root"       value="${project::get-base-directory()}"/>
+    <property name="outname"    value="${project::get-name()}"/>
+    <property name="debugdir"   value="${root}\SieSaSo.Admin\Debug\bin"/>
+    <property name="logdir"     value="${root}\Log"/>
+    <property name="tempdir"    value="${root}\Temp"/>
+    <property name="releasedir" value="${root}\Release"/>
+    <property name="packagedir" value="${root}\..\Pakete"/>
+
+    <property name="shortdate"  value="${dotnetuc::buildDate()}" />
+    <property name="shorttime"  value="${dotnetuc::buildTime()}" />
+
+    <property name="copytext"   value="(c) 2006 Thomas Mentzel" />
+    <property name="copyhref"   value="http://thomas.mentzel.name" />
+
+    <property name="NunitOutputType" value="Xml"/>
+
+    <if test="${not property::exists('CCNetLabel')}">
+        <property name="CCNetLabel"  value="${shortdate}${shorttime}" />
+        <property name="NunitOutputType" value="Plain"/>
+    </if>
+    <property name="ccnet.label"  value="${CCNetLabel}" />
+
+    <!--~~~~~~~~~~~~~~~~~
+         Default Target: complete
+      ~~~~~~~~~~~~~~~~~-->
+
+    <!-- Target für "Erstellen" -->
+    <target name="complete" description="Erstellen des gesamten Projektes" depends="clean,build,test,publish">
+
+        <call target="clean" />
+        
+    </target>
+
+    <!--~~~~~~~~~~~~~
+         Sub-Targets 
+      ~~~~~~~~~~~~~-->
+
+    <!-- Bereinigen des Projektes -->
+    <target name="clean" description="Bereinigen des Solution Verzeichnisses" depends="cleanDebug,cleanRelease" />
+
+    <!-- Aufrufen von MSBuild zum erstellen von Debug und Release -->
+    <target name="build" description="Aufrufen des MSBuild Prozesses" depends="clean">
+        <exec program="${msbuild}" workingdir="${root}">
+            <!--<arg value="${outname}.sln" />-->
+            <arg value="/p:Configuration=Debug" />
+        </exec>
+
+        <exec program="${msbuild}" workingdir="${root}">
+            <!--<arg value="${outname}.sln" />-->
+            <arg value="/p:Configuration=Release" />
+        </exec>
+    </target>
+
+    <!-- Testen des Projektes -->
+    <target name="test" description="Testen des Builds" depends="build">
+
+        <!-- Log-Verzeichnis anlegen -->
+        <delete dir="${logdir}" failonerror="false" />
+        <mkdir dir="${logdir}" />
+
+        <!-- NUnit -->
+        <nunit2 failonerror="false">
+            <formatter type="${NunitOutputType}" usefile="true" extension=".xml" outputdir="${logdir}\" />"
+            <test assemblyname="Siesaso.Test.Nunit\bin\Debug\Siesaso.Test.Nunit.dll" />
+        </nunit2>
+
+        <!-- Simian Code Analyse -->
+        <exec program="${simian}" failonerror="false">
+            <arg value="-recurse=*.cs"/>
+            <arg value="-threshold=4" />
+            <arg value="-failOnDuplication-" />
+            <arg value="-formatter=xml:${logdir}\simian.xml"/>
+        </exec>
+
+    </target>
+
+    <target name="publish" description="Veröffentliches des Builds" depends="build">
+        <call target="doc-sdk" />
+        <call target="releaseFiles" />
+        <call target="package" />
+    </target>
+
+    <target name="cleanDebug" description="Bereinigen des Projektes - Debugdateien">
+        <foreach item="Folder" in="${root}" property="dirname">
+            <delete failonerror="false" dir="${dirname}\bin" />
+            <delete failonerror="false" dir="${dirname}\obj" />
+        </foreach>
+    </target>
+
+    <target name="cleanRelease" description="Bereinigen des Projektes - Releasedateien">
+        <delete failonerror="false" dir="${tempdir}" />
+        <delete failonerror="false" dir="${releasedir}" />
+        <delete failonerror="false" dir="${logdir}" />
+    </target>
+
+    <target name="releaseFiles" description="Kopiert die Dateien für das Release">
+
+    </target>
+
+    <!-- Erstellen eines Paketes mit den notwenigen Dateien -->
+    <target name="package" description="Erstellen des Paketes">
+        <call target="cleanDebug" />
+        
+        <mkdir dir="${packagedir}" />
+        <delete file="${packagedir}\${outname}-${ccnet.label}.zip" />
+        <zip zipfile="${packagedir}\${outname}-${ccnet.label}.zip">
+
+            <fileset basedir="${releasedir}" prefix="bin">
+                <include name="*.exe" />
+                <include name="*.dll" />
+                <include name="*.config" />
+
+                <exclude name="*Test.*" />
+                <exclude name="nunit*.*" />
+            </fileset>
+
+            <fileset basedir="${releasedir}" prefix="tests">
+                <include name="*.exe" />
+                <include name="*.dll" />
+                <include name="*.config" />
+                <include name="*.pdb" />
+            </fileset>
+
+            <fileset basedir="${releasedir}" prefix="doc">
+                <include name="*.chm" />
+                <include name="*.doc" />
+            </fileset>
+
+            <fileset basedir="${releasedir}" prefix="out">
+                <include name="*.xml" />
+                <include name="*.log" />
+            </fileset>
+
+            <fileset basedir="${logdir}" prefix="out">
+                <include name="*.*" />
+            </fileset>
+
+            <fileset basedir="${releasedir}">
+                <include name="*.txt" />
+                <include name="*.msi" />
+            </fileset>
+
+            <fileset basedir="${root}" prefix="src">
+                <exclude name="${releasedir}" />
+                <exclude name="${logdir}" />
+                <exclude name="${tempdir}" />
+
+                <include name="**/*" />
+            </fileset>
+
+        </zip>
+
+    </target>
+
+    <!-- Erstellen der Programmierdokumentation -->
+    <target name="doc-sdk" description="Erstellen der SDK-Dokumentation">
+        <ndoc failonerror="false">
+
+            <assemblies basedir="${root}">
+                <include name="Siesaso.Hibernate\bin\Debug\Siesaso.Hibernate.dll" />
+            </assemblies>
+
+            <summaries basedir="${root}">
+                <include name="NamespaceSummaries.xml" />
+            </summaries>
+
+            <documenters>
+                <documenter name="MSDN">
+                    <property name="OutputDirectory" value="${tempdir}\Msdn" />
+                    <property name="HtmlHelpName" value="${outname}.chm" />
+                    <property name="HtmlHelpCompilerFilename" value="hhc.exe" />
+                    <property name="IncludeFavorites" value="False" />
+                    <property name="Title" value="${outname} - Quellcode Dokumentation" />
+                    <property name="SplitTOCs" value="False" />
+                    <property name="DefaulTOC" value="" />
+                    <property name="ShowVisualBasic" value="False" />
+                    <property name="ShowMissingSummaries" value="False" />
+                    <property name="ShowMissingRemarks" value="False" />
+                    <property name="ShowMissingParams" value="False" />
+                    <property name="ShowMissingReturns" value="False" />
+                    <property name="ShowMissingValues" value="False" />
+                    <property name="DocumentInternals" value="False" />
+                    <property name="DocumentProtected" value="False" />
+                    <property name="DocumentPrivates" value="False" />
+                    <property name="DocumentEmptyNamespaces" value="True" />
+                    <property name="IncludeAssemblyVersion" value="True" />
+                    <property name="CopyrightText" value="${copytext}" />
+                    <property name="CopyrightHref" value="${copyhref}" />
+                </documenter>
+            </documenters>
+        </ndoc>
+
+        <copy failonerror="false" file="${tempdir}\Msdn\${outname}.chm" todir="${releasedir}" />
+
+    </target>
+
+</project>
