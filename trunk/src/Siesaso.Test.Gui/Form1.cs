@@ -39,8 +39,41 @@ namespace Siesaso.Test.Gui
 
         private void gürtelBindingSource_AddingNew(object sender, AddingNewEventArgs e)
         {
-            if (e.NewObject == null) return;
-            MessageBox.Show(e.NewObject.ToString());
+        }
+
+        private void gürtelBindingSource_BindingComplete(object sender, BindingCompleteEventArgs e)
+        {
+
+        }
+
+        private void gürtelBindingSource_CurrentItemChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gürtelBindingSource_DataError(object sender, BindingManagerDataErrorEventArgs e)
+        {
+
+        }
+
+        private void gürtelBindingSource_DataMemberChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gürtelBindingSource_DataSourceChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gürtelBindingSource_ListChanged(object sender, ListChangedEventArgs e)
+        {
+
+        }
+
+        private void gürtelBindingSource_PositionChanged(object sender, EventArgs e)
+        {
+
         }
 
    }

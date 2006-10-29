@@ -32,19 +32,20 @@ namespace Siesaso.Test.Gui
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dctName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.gürtelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.farbeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.entityPersister1 = new Siesaso.Hibernate.EntityPersister(this.components);
-            this.entityBindingSource1 = new Siesaso.Hibernate.EntityBindingSource();
+            this.gürtelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.nummerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.farbeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.entityBindingSource1 = new Siesaso.Hibernate.EntityBindingSource();
+            this.entityPersister1 = new Siesaso.Hibernate.EntityPersister(this.components);
+            this.bindingSourceInterceptor1 = new Siesaso.Hibernate.BindingSourceInterceptor(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gürtelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.entityBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +78,31 @@ namespace Siesaso.Test.Gui
             this.Nummer.HeaderText = "Nummer";
             this.Nummer.Name = "Nummer";
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // farbeDataGridViewTextBoxColumn
+            // 
+            this.farbeDataGridViewTextBoxColumn.DataPropertyName = "Farbe";
+            this.farbeDataGridViewTextBoxColumn.HeaderText = "Farbe";
+            this.farbeDataGridViewTextBoxColumn.Name = "farbeDataGridViewTextBoxColumn";
+            // 
+            // gürtelBindingSource
+            // 
+            this.gürtelBindingSource.DataSource = typeof(Siesaso.Hibernate.Gürtel);
+            this.gürtelBindingSource.CurrentChanged += new System.EventHandler(this.gürtelBindingSource_CurrentChanged);
+            this.gürtelBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.gürtelBindingSource_AddingNew);
+            this.gürtelBindingSource.DataMemberChanged += new System.EventHandler(this.gürtelBindingSource_DataMemberChanged);
+            this.gürtelBindingSource.BindingComplete += new System.Windows.Forms.BindingCompleteEventHandler(this.gürtelBindingSource_BindingComplete);
+            this.gürtelBindingSource.PositionChanged += new System.EventHandler(this.gürtelBindingSource_PositionChanged);
+            this.gürtelBindingSource.DataSourceChanged += new System.EventHandler(this.gürtelBindingSource_DataSourceChanged);
+            this.gürtelBindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.gürtelBindingSource_DataError);
+            this.gürtelBindingSource.CurrentItemChanged += new System.EventHandler(this.gürtelBindingSource_CurrentItemChanged);
+            this.gürtelBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.gürtelBindingSource_ListChanged);
+            // 
             // dataGridView2
             // 
             this.dataGridView2.AutoGenerateColumns = false;
@@ -91,32 +117,6 @@ namespace Siesaso.Test.Gui
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(558, 243);
             this.dataGridView2.TabIndex = 1;
-            // 
-            // gürtelBindingSource
-            // 
-            this.gürtelBindingSource.DataSource = typeof(Siesaso.Hibernate.Gürtel);
-            this.gürtelBindingSource.CurrentChanged += new System.EventHandler(this.gürtelBindingSource_CurrentChanged);
-            this.gürtelBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.gürtelBindingSource_AddingNew);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // farbeDataGridViewTextBoxColumn
-            // 
-            this.farbeDataGridViewTextBoxColumn.DataPropertyName = "Farbe";
-            this.farbeDataGridViewTextBoxColumn.HeaderText = "Farbe";
-            this.farbeDataGridViewTextBoxColumn.Name = "farbeDataGridViewTextBoxColumn";
-            // 
-            // entityPersister1
-            // 
-            this.entityPersister1.BindingSource = this.gürtelBindingSource;
-            // 
-            // entityBindingSource1
-            // 
-            this.entityBindingSource1.DataSource = typeof(Siesaso.Hibernate.Gürtel);
             // 
             // nummerDataGridViewTextBoxColumn
             // 
@@ -142,6 +142,18 @@ namespace Siesaso.Test.Gui
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
+            // entityBindingSource1
+            // 
+            this.entityBindingSource1.DataSource = typeof(Siesaso.Hibernate.Gürtel);
+            // 
+            // entityPersister1
+            // 
+            this.entityPersister1.BindingSource = this.gürtelBindingSource;
+            // 
+            // bindingSourceInterceptor1
+            // 
+            this.bindingSourceInterceptor1.BindingSource = this.gürtelBindingSource;
+            // 
             // MyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,8 +165,8 @@ namespace Siesaso.Test.Gui
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gürtelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.entityBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -175,6 +187,7 @@ namespace Siesaso.Test.Gui
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private Siesaso.Hibernate.EntityBindingSource entityBindingSource1;
+        private Siesaso.Hibernate.BindingSourceInterceptor bindingSourceInterceptor1;
     }
 }
 
