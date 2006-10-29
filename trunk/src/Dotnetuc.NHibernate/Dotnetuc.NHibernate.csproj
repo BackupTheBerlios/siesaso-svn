@@ -4,11 +4,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F1F391B8-DAFB-4B2C-AA2C-CF69997916DA}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{31704FEC-6582-4C99-B2A3-8CF53F8B8E97}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Siesaso.Test.Gui</RootNamespace>
-    <AssemblyName>Siesaso.Test.Gui</AssemblyName>
+    <RootNamespace>Dotnetuc.NHibernate</RootNamespace>
+    <AssemblyName>Dotnetuc.NHibernate</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,59 +42,24 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="BindingSourceInterceptor.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="BindingSourceInterceptor.Designer.cs">
+      <DependentUpon>BindingSourceInterceptor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="EntityPersister.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EntityPersister.Designer.cs">
+      <DependentUpon>EntityPersister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="App.config" />
-    <None Include="Properties\DataSources\Siesaso.Hibernate.Gürtel.datasource" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SieSaSoDatenbank.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Dotnetuc.NHibernate\Dotnetuc.NHibernate.csproj">
-      <Project>{31704FEC-6582-4C99-B2A3-8CF53F8B8E97}</Project>
-      <Name>Dotnetuc.NHibernate</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Siesaso.Hibernate\Siesaso.Hibernate.csproj">
-      <Project>{7FDB559B-02FB-4D65-A9AB-EFE25E39F6A8}</Project>
-      <Name>Siesaso.Hibernate</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

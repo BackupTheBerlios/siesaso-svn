@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Dotnetuc.NHibernate;
 
 namespace Siesaso.Hibernate
 {
-    public class Entity
+    public class Entity : IEntity
     {
         /// <summary>
         /// Löscht das Objekt aus Hibernate / der Datenbank

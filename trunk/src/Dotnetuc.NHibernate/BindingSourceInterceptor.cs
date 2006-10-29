@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Siesaso.Hibernate
+namespace Dotnetuc.NHibernate
 {
     /// <summary>
     /// Klasse zum Abfangen und Auswerten von Events einer BindungSource

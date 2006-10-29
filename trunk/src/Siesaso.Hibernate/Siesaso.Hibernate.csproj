@@ -58,35 +58,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BindingSourceInterceptor.cs">
-      <SubType>Component</SubType>
+    <Compile Include="Entity.cs">
+      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BindingSourceInterceptor.Designer.cs">
-      <DependentUpon>BindingSourceInterceptor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Entity.cs" />
-    <Compile Include="EntityBindingSource.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Entity`T.cs" />
-    <Compile Include="EntityPersister.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="EntityPersister.Designer.cs">
-      <DependentUpon>EntityPersister.cs</DependentUpon>
+    <Compile Include="Entity`T.cs">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Gürtel.cs" />
-    <Compile Include="ItemAddedEventArgs.cs" />
-    <Compile Include="ItemEventArgs.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EntityBindingSource.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>EntityBindingSource.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Mapping\Gürtel.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dotnetuc.NHibernate\Dotnetuc.NHibernate.csproj">
+      <Project>{31704FEC-6582-4C99-B2A3-8CF53F8B8E97}</Project>
+      <Name>Dotnetuc.NHibernate</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

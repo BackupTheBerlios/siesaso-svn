@@ -76,5 +76,26 @@ namespace Siesaso.Test.Gui
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            gürtelBindingSource.Add(new Gürtel());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            gürtelBindingSource.AddNew();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            gürtelBindingSource.RemoveAt(1);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ((Gürtel)gürtelBindingSource.Current).Nummer = 4711;
+        }
+
+
    }
 }

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Siesaso.Hibernate;
 
 namespace Siesaso.Hibernate
 {

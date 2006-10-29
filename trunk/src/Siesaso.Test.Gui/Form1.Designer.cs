@@ -35,18 +35,14 @@ namespace Siesaso.Test.Gui
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.farbeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gürtelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.nummerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.farbeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.entityBindingSource1 = new Siesaso.Hibernate.EntityBindingSource();
-            this.entityPersister1 = new Siesaso.Hibernate.EntityPersister(this.components);
-            this.bindingSourceInterceptor1 = new Siesaso.Hibernate.BindingSourceInterceptor(this.components);
+            this.entityPersister1 = new Dotnetuc.NHibernate.EntityPersister(this.components);
+            this.bindingSourceInterceptor1 = new Dotnetuc.NHibernate.BindingSourceInterceptor(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gürtelBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.entityBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -103,49 +99,6 @@ namespace Siesaso.Test.Gui
             this.gürtelBindingSource.CurrentItemChanged += new System.EventHandler(this.gürtelBindingSource_CurrentItemChanged);
             this.gürtelBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.gürtelBindingSource_ListChanged);
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nummerDataGridViewTextBoxColumn,
-            this.farbeDataGridViewTextBoxColumn1,
-            this.idDataGridViewTextBoxColumn1,
-            this.nameDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.entityBindingSource1;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 261);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(558, 243);
-            this.dataGridView2.TabIndex = 1;
-            // 
-            // nummerDataGridViewTextBoxColumn
-            // 
-            this.nummerDataGridViewTextBoxColumn.DataPropertyName = "Nummer";
-            this.nummerDataGridViewTextBoxColumn.HeaderText = "Nummer";
-            this.nummerDataGridViewTextBoxColumn.Name = "nummerDataGridViewTextBoxColumn";
-            // 
-            // farbeDataGridViewTextBoxColumn1
-            // 
-            this.farbeDataGridViewTextBoxColumn1.DataPropertyName = "Farbe";
-            this.farbeDataGridViewTextBoxColumn1.HeaderText = "Farbe";
-            this.farbeDataGridViewTextBoxColumn1.Name = "farbeDataGridViewTextBoxColumn1";
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // entityBindingSource1
-            // 
-            this.entityBindingSource1.DataSource = typeof(Siesaso.Hibernate.Gürtel);
-            // 
             // entityPersister1
             // 
             this.entityPersister1.BindingSource = this.gürtelBindingSource;
@@ -154,20 +107,61 @@ namespace Siesaso.Test.Gui
             // 
             this.bindingSourceInterceptor1.BindingSource = this.gürtelBindingSource;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(40, 283);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "add";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(121, 283);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "addnew";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(202, 283);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "change";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(283, 283);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "delete";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // MyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 633);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "MyForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gürtelBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.entityBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -180,14 +174,12 @@ namespace Siesaso.Test.Gui
         private System.Windows.Forms.DataGridViewTextBoxColumn farbeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dctName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nummer;
-        private Siesaso.Hibernate.EntityPersister entityPersister1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nummerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn farbeDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private Siesaso.Hibernate.EntityBindingSource entityBindingSource1;
-        private Siesaso.Hibernate.BindingSourceInterceptor bindingSourceInterceptor1;
+        private Dotnetuc.NHibernate.EntityPersister entityPersister1;
+        private Dotnetuc.NHibernate.BindingSourceInterceptor bindingSourceInterceptor1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
 

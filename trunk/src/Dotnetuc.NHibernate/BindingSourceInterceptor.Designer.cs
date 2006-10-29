@@ -1,4 +1,4 @@
-namespace Siesaso.Hibernate
+namespace Dotnetuc.NHibernate
 {
     partial class BindingSourceInterceptor
     {

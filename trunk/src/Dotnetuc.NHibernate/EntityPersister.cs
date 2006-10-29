@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Siesaso.Hibernate
+namespace Dotnetuc.NHibernate
 {
     public partial class EntityPersister : Component
     {
@@ -35,9 +35,9 @@ namespace Siesaso.Hibernate
 
         private EventHandler bindingCurrentChangedEventHandler = null;
 
-        private Entity currentItemOld = null;
+        private IEntity currentItemOld = null;
 
-        private Entity currentItem = null;
+        private IEntity currentItem = null;
 
         #region BindingSource Member
 
@@ -86,13 +86,13 @@ namespace Siesaso.Hibernate
             // KO-Kriterien "sender.List"
             if (lst == null) return;
             if (lst.Count == 0) return;
-            if (!(lst[0] is Entity)) return;
+            if (!(lst[0] is IEntity)) return;
 
             // KO-Kriterien "e"
             if (e.NewIndex >= lst.Count) return;
 
             // Abfragen der Art der Listenänderung
-            Entity ent = (Entity)lst[e.NewIndex];
+            IEntity ent = (IEntity)lst[e.NewIndex];
 
             switch (e.ListChangedType)
             {
@@ -133,7 +133,7 @@ namespace Siesaso.Hibernate
             BindingSource bnd = (BindingSource)sender;
 
             // KO-Kriterien "sender.Current"
-            if (!(bnd.Current is Entity))
+            if (!(bnd.Current is IEntity))
             {
                 currentItem = null;
                 return;
@@ -141,7 +141,7 @@ namespace Siesaso.Hibernate
 
             // Aktuelles Item merken
             currentItemOld = currentItem;
-            currentItem = (Entity)bnd.Current;
+            currentItem = (IEntity)bnd.Current;
         }
 
         #endregion
