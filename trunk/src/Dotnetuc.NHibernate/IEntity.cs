@@ -6,6 +6,8 @@ namespace Dotnetuc.NHibernate
 {
     public interface IEntity
     {
+        bool IsUnsaved{ get; }
+
         void Save();
 
         void Delete();

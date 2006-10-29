@@ -9,8 +9,9 @@ namespace Siesaso.Hibernate
     /// Verwaltung der Entitäten.
     /// </summary>
     /// <typeparam name="keytype">Jede Entität ist an eine Klasse (also den Typen gebunden)</typeparam>
-    public class Entity<keytype> : Entity
+    public abstract class Entity<keytype> : Entity
     {
+
         /// <summary>
         /// Ermitteln einer Liste aller Objekte der Entitäten.
         /// </summary>

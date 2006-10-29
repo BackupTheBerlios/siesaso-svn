@@ -7,6 +7,15 @@ using System.Windows.Forms;
 
 namespace Dotnetuc.NHibernate
 {
+    /// <summary>
+    /// Die Komponente dient zum automatischen Persistieren von IEntity-Listen in einer
+    /// BindingSource. Dabei ist die Komponente ausgelegt aus das Bearbeiten mittels
+    /// der folgenden Komponenten:
+    /// <list type="bullet">
+    /// <item><see cref="DataGridView" /></item>
+    /// </list>
+    /// </summary>
+    [System.Drawing.ToolboxBitmap(typeof(BindingSourceInterceptor), "Icons.EntityPersister")]
     public partial class EntityPersister : Component
     {
         /// <summary>

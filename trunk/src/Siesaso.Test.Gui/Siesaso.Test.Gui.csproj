@@ -65,6 +65,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="VSNachbildung.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VSNachbildung.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -80,6 +84,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="VSNachbildung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VSNachbildung.Designer.cs">
+      <DependentUpon>VSNachbildung.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="SieSaSoDatenbank.mdb">
@@ -90,6 +100,10 @@
     <ProjectReference Include="..\Dotnetuc.NHibernate\Dotnetuc.NHibernate.csproj">
       <Project>{31704FEC-6582-4C99-B2A3-8CF53F8B8E97}</Project>
       <Name>Dotnetuc.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Siesaso.Forms\Siesaso.Forms.csproj">
+      <Project>{D3B58FD4-9608-4904-8F9C-DB5CEB056EA7}</Project>
+      <Name>Siesaso.Forms</Name>
     </ProjectReference>
     <ProjectReference Include="..\Siesaso.Hibernate\Siesaso.Hibernate.csproj">
       <Project>{7FDB559B-02FB-4D65-A9AB-EFE25E39F6A8}</Project>

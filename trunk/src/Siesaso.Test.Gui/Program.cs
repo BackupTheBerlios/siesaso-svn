@@ -16,7 +16,7 @@ namespace Siesaso.Test.Gui
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MyForm());
+            Application.Run(new VSNachbildung());
         }
     }
 }

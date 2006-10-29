@@ -4,11 +4,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{31704FEC-6582-4C99-B2A3-8CF53F8B8E97}</ProjectGuid>
+    <ProjectGuid>{D3B58FD4-9608-4904-8F9C-DB5CEB056EA7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Dotnetuc.NHibernate</RootNamespace>
-    <AssemblyName>Dotnetuc.NHibernate</AssemblyName>
+    <RootNamespace>Siesaso.Forms</RootNamespace>
+    <AssemblyName>Siesaso.Forms</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,18 +28,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\libs\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate, Version=1.2.0.2001, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\libs\NHibernate.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate.JetDriver, Version=1.2.0.2001, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\libs\NHibernate.JetDriver.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -47,28 +35,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BindingSourceInterceptor.cs">
+    <Compile Include="EntityEditTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="BindingSourceInterceptor.Designer.cs">
-      <DependentUpon>BindingSourceInterceptor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EntityPersister.cs">
+    <Compile Include="EntityEditTabPage.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="EntityPersister.Designer.cs">
-      <DependentUpon>EntityPersister.cs</DependentUpon>
-    </Compile>
-    <Compile Include="IEditable.cs" />
-    <Compile Include="IEditControl.cs" />
-    <Compile Include="IEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Icons\BindingSourceInterceptor.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Icons\EntityPersister.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

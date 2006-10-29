@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using System.ComponentModel;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,6 +11,7 @@ namespace Dotnetuc.NHibernate
     /// <summary>
     /// Klasse zum Abfangen und Auswerten von Events einer BindungSource
     /// </summary>
+    [System.Drawing.ToolboxBitmap(typeof(BindingSourceInterceptor), "Icons.BindingSourceInterceptor")]
     public partial class BindingSourceInterceptor : Component
     {
         #region Logger
@@ -128,7 +130,14 @@ namespace Dotnetuc.NHibernate
 
         private void BindingSource_AddingNew(object sender, AddingNewEventArgs e)
         {
-            if (log.IsDebugEnabled) log.Debug("BindingSource.AddingNew raised [" + ((BindingSource)sender).ToString() + "]");
+            if (e.NewObject == null)
+            {
+                if (log.IsDebugEnabled) log.Debug("BindingSource.AddingNew raised [" + ((BindingSource)sender).ToString() + "]: NULL");
+            }
+            else
+            {
+                if (log.IsDebugEnabled) log.Debug("BindingSource.AddingNew raised [" + ((BindingSource)sender).ToString() + "]: " + e.NewObject.ToString());
+            }
         }
 
         private void BindingSource_BindingComplete(object sender, BindingCompleteEventArgs e)
@@ -163,7 +172,7 @@ namespace Dotnetuc.NHibernate
 
         private void BindingSource_ListChanged(object sender, ListChangedEventArgs e)
         {
-            if (log.IsDebugEnabled) log.Debug("BindingSource.ListChanged raised [" + ((BindingSource)sender).ToString() + "]");
+            if (log.IsDebugEnabled) log.Debug("BindingSource.ListChanged raised [" + ((BindingSource)sender).ToString() + "]: " + e.ListChangedType.ToString());
         }
 
         private void BindingSource_PositionChanged(object sender, EventArgs e)

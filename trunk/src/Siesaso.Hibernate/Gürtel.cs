@@ -10,6 +10,12 @@ namespace Siesaso.Hibernate
     /// </summary>
     public class Gürtel : Entity<Gürtel>
     {
+
+        protected override int PrimaryKey()
+        {
+            return id;
+        }
+
         private int id;
 
         public virtual int Id
@@ -40,6 +46,11 @@ namespace Siesaso.Hibernate
         {
             get { return name; }
             set { name = value; }
+        }
+
+        public override string ToString()
+        {
+            return name;
         }
 	
     }
