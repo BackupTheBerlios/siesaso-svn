@@ -51,6 +51,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="EntityEditTabControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EntityEditTabControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GürtelList.resx">
       <DependentUpon>GürtelList.cs</DependentUpon>
       <SubType>Designer</SubType>

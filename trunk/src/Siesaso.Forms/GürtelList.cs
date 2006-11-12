@@ -18,9 +18,13 @@ namespace Siesaso.Forms
         public Object Entity
         {
             get { return entity; }
-            set { entity = value; }
+            set
+            {
+                entity = value;
+                gürtelBindingSource.DataSource = entity;
+            }
         }
-	
+
         public GürtelList()
         {
             InitializeComponent();
@@ -31,14 +35,14 @@ namespace Siesaso.Forms
 
         public bool CanPresent(object entity)
         {
-            if (entity is Gürtel) return true;
+            if (entity is List<Gürtel>) return true;
             return false;
         }
 
-        public void Present(object entity)
+        public void Present(Object entity)
         {
-            if (!(entity is Gürtel)) throw new InvalidCastException("Element kann nicht dargestellt werden");
-            this.Entity = (Gürtel)entity;
+            if (!(entity is List<Gürtel>)) throw new InvalidCastException("Element kann nicht dargestellt werden");
+            this.Entity = entity;
         }
 
         #endregion

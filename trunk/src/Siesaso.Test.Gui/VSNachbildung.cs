@@ -22,13 +22,18 @@ namespace Siesaso.Test.Gui
             if (listBox1.SelectedItem == null) return;
             //if (!(listBox1.SelectedItem is IEditable)) return;
 
-            entityEditTabControl1.Edit(listBox1.SelectedItem, typeof(GürtelList));
+            entityEditTabControl1.Edit(listBox1.SelectedItem, typeof(GürtelList), listBox1.SelectedItem.ToString());
          }
 
         private void VSNachbildung_Load(object sender, EventArgs e)
         {
             bindingSource1.DataSource = Gürtel.List();
 
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            entityEditTabControl1.Edit(Gürtel.List(), typeof(GürtelList), "Gürtel");
         }
     }
 }

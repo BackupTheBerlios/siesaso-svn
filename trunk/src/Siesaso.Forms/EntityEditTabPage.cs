@@ -6,28 +6,23 @@ namespace Siesaso.Forms
 {
     public class EntityEditTabPage : System.Windows.Forms.TabPage
     {
-        public EntityEditTabPage()
-            : base()
+        public EntityEditTabPage(IEntityEditControl initEntity)
+            : base(initEntity.Entity.ToString())
         {
+            editControl = initEntity;
         }
 
-        public EntityEditTabPage(string text)
+        public EntityEditTabPage(IEntityEditControl initEntity, String text)
             : base(text)
         {
+            editControl = initEntity;
         }
 
-        public EntityEditTabPage(Object initEntity)
-            : base(initEntity.ToString())
-        {
-            entity = initEntity;
-        }
+        private IEntityEditControl editControl = null;
 
-        private Object entity = null;
-
-        public Object Entity
+        public IEntityEditControl EditControl
         {
-            get { return entity; }
-            set { entity = value; }
+            get { return editControl; }
         }
     }
 }

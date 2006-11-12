@@ -31,34 +31,48 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gürtelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nummerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.farbeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isUnsavedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.gürtelEntityPersister = new Dotnetuc.NHibernate.EntityPersister(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gürtelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
             this.nummerDataGridViewTextBoxColumn,
             this.farbeDataGridViewTextBoxColumn,
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.isUnsavedDataGridViewCheckBoxColumn});
+            this.nameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.gürtelBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(341, 263);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(385, 389);
             this.dataGridView1.TabIndex = 0;
             // 
             // gürtelBindingSource
             // 
             this.gürtelBindingSource.DataSource = typeof(Siesaso.Hibernate.Gürtel);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 15;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 30;
             // 
             // nummerDataGridViewTextBoxColumn
             // 
@@ -72,24 +86,15 @@
             this.farbeDataGridViewTextBoxColumn.HeaderText = "Farbe";
             this.farbeDataGridViewTextBoxColumn.Name = "farbeDataGridViewTextBoxColumn";
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // isUnsavedDataGridViewCheckBoxColumn
+            // gürtelEntityPersister
             // 
-            this.isUnsavedDataGridViewCheckBoxColumn.DataPropertyName = "IsUnsaved";
-            this.isUnsavedDataGridViewCheckBoxColumn.HeaderText = "IsUnsaved";
-            this.isUnsavedDataGridViewCheckBoxColumn.Name = "isUnsavedDataGridViewCheckBoxColumn";
-            this.isUnsavedDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.gürtelEntityPersister.BindingSource = this.gürtelBindingSource;
             // 
             // GürtelList
             // 
@@ -107,11 +112,11 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource gürtelBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nummerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn farbeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isUnsavedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.BindingSource gürtelBindingSource;
+        private Dotnetuc.NHibernate.EntityPersister gürtelEntityPersister;
     }
 }
