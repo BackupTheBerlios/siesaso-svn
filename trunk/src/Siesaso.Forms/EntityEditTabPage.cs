@@ -15,5 +15,19 @@ namespace Siesaso.Forms
             : base(text)
         {
         }
+
+        public EntityEditTabPage(Object initEntity)
+            : base(initEntity.ToString())
+        {
+            entity = initEntity;
+        }
+
+        private Object entity = null;
+
+        public Object Entity
+        {
+            get { return entity; }
+            set { entity = value; }
+        }
     }
 }

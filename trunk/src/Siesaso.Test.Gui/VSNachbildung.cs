@@ -20,20 +20,10 @@ namespace Siesaso.Test.Gui
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem == null) return;
+            //if (!(listBox1.SelectedItem is IEditable)) return;
 
-            CreateTabPage(listBox1.SelectedItem);
+            entityEditTabControl1.Edit(listBox1.SelectedItem, typeof(GürtelList));
          }
-
-        private void CreateTabPage(object p)
-        {
-            if (p is Gürtel)
-            {
-                EntityEditTabPage tp = new EntityEditTabPage(p.ToString());
-                tp.Controls.Add(new WebBrowser());
-
-                entityEditTabControl1.TabPages.Add(tp);
-            }
-        }
 
         private void VSNachbildung_Load(object sender, EventArgs e)
         {

@@ -5,7 +5,7 @@ using NUnit.Framework;
 
 namespace Siesaso.Test.Nunit
 {
-    [TestFixture(Description="Testen des EntiryPersisters")]
+    [TestFixture(Description="Testen des EntityPersisters")]
     public class EntityPersisterTest
     {
     }

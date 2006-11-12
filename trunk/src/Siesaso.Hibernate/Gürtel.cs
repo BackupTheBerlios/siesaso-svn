@@ -52,6 +52,5 @@ namespace Siesaso.Hibernate
         {
             return name;
         }
-	
     }
 }
