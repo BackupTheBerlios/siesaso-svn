@@ -8,8 +8,9 @@ using System.Windows.Forms;
 using Siesaso.Forms;
 using Siesaso.Hibernate;
 
-namespace Siesaso.Forms
+namespace Siesaso.Controls
 {
+    [System.Drawing.ToolboxBitmap(typeof(GürtelList), "Icons.Gürtel")]
     public partial class GürtelList : UserControl, IEntityEditControl
     {
 
@@ -36,13 +37,21 @@ namespace Siesaso.Forms
         public bool CanPresent(object entity)
         {
             if (entity is List<Gürtel>) return true;
+            if (entity is Gürtel) return true;
             return false;
         }
 
         public void Present(Object entity)
         {
-            if (!(entity is List<Gürtel>)) throw new InvalidCastException("Element kann nicht dargestellt werden");
             this.Entity = entity;
+        }
+
+        public bool IsPresenting(object testEntity)
+        {
+            if (testEntity is List<Gürtel> && entity is List<Gürtel>) return true;
+            if (testEntity is Gürtel && testEntity == entity) return true;
+
+            return false;
         }
 
         #endregion

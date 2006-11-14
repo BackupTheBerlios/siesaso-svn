@@ -27,5 +27,13 @@ namespace Siesaso.Forms
         /// </summary>
         /// <param name="entity">Entität zum Darstellen</param>
         void Present(Object entity);
+
+        /// <summary>
+        /// Ermittelt, ob die übergebene Entität in dem
+        /// Steuerelement angezeigt wird.
+        /// </summary>
+        /// <param name="entity">Entität, die geprüft werden soll</param>
+        /// <returns>True, wenn das Objekt in dem Steuerelement dargestellt wird.</returns>
+        bool IsPresenting(Object entity);
     }
 }

@@ -67,6 +67,7 @@
     <Compile Include="Gürtel.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Verein.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Mapping\Gürtel.hbm.xml" />
@@ -76,6 +77,9 @@
       <Project>{31704FEC-6582-4C99-B2A3-8CF53F8B8E97}</Project>
       <Name>Dotnetuc.NHibernate</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Mapping\Verein.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

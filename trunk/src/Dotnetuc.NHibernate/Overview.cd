@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Comment CommentText="Ein EntityPersister verwaltet eine BindingSource mit einer Liste von IEntity-Objekten.">
+    <Position X="3.156" Y="3.021" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Der BindingSourceInterceptor loggt mittels log4net alle Events der zugeordneten BindungSource.">
+    <Position X="3.125" Y="0.521" Height="0.75" Width="2.408" />
+  </Comment>
+  <Class Name="Dotnetuc.NHibernate.BindingSourceInterceptor">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>BindingSourceInterceptor.cs</FileName>
+      <HashCode>AAEAAAAgACAA4iQQAACgDIAiAARAAAAQQERAAAABAAA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Method Name="AddHandler" Hidden="true" />
+      <Method Name="BindingSource_AddingNew" Hidden="true" />
+      <Method Name="BindingSource_BindingComplete" Hidden="true" />
+      <Method Name="BindingSource_CurrentChanged" Hidden="true" />
+      <Method Name="BindingSource_CurrentItemChanged" Hidden="true" />
+      <Method Name="BindingSource_DataError" Hidden="true" />
+      <Method Name="BindingSource_DataMemberChanged" Hidden="true" />
+      <Method Name="BindingSource_DataSourceChanged" Hidden="true" />
+      <Method Name="BindingSource_ListChanged" Hidden="true" />
+      <Method Name="BindingSource_PositionChanged" Hidden="true" />
+      <Method Name="BindingSourceInterceptor" Hidden="true" />
+      <Method Name="CreateEventHandler" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Method Name="RemoveHandler" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Dotnetuc.NHibernate.EntityPersister">
+    <Position X="0.5" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>EntityPersister.cs</FileName>
+      <HashCode>AAEAAAAAACABQAAAAACACEECBAAAAAAAAEAAAAABAAA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Method Name="BindingSourceCurrentChanged" Hidden="true" />
+      <Method Name="BindingSourceListChanged" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="EntityPersister" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Interface Name="Dotnetuc.NHibernate.IEntity">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>IEntity.cs</FileName>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAEAEAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+</ClassDiagram>

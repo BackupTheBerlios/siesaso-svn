@@ -41,12 +41,6 @@
     <Compile Include="EntityEditTabPage.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="GürtelList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GürtelList.Designer.cs">
-      <DependentUpon>GürtelList.cs</DependentUpon>
-    </Compile>
     <Compile Include="IEntityEditControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -54,10 +48,6 @@
     <EmbeddedResource Include="EntityEditTabControl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EntityEditTabControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GürtelList.resx">
-      <DependentUpon>GürtelList.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

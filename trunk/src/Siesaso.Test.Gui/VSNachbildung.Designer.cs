@@ -32,12 +32,15 @@ namespace Siesaso.Test.Gui
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VSNachbildung));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.entityEditTabControl1 = new Siesaso.Forms.EntityEditTabControl();
+            this.splitter2 = new System.Windows.Forms.Splitter();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -52,6 +55,8 @@ namespace Siesaso.Test.Gui
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.entityEditTabControl1);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.splitter2);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.splitter1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.panel2);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.panel1);
             this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(745, 435);
@@ -69,11 +74,29 @@ namespace Siesaso.Test.Gui
             // entityEditTabControl1
             // 
             this.entityEditTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.entityEditTabControl1.Location = new System.Drawing.Point(200, 0);
+            this.entityEditTabControl1.Location = new System.Drawing.Point(203, 0);
+            this.entityEditTabControl1.Multiline = true;
             this.entityEditTabControl1.Name = "entityEditTabControl1";
             this.entityEditTabControl1.SelectedIndex = 0;
-            this.entityEditTabControl1.Size = new System.Drawing.Size(346, 435);
-            this.entityEditTabControl1.TabIndex = 2;
+            this.entityEditTabControl1.Size = new System.Drawing.Size(340, 435);
+            this.entityEditTabControl1.TabIndex = 4;
+            // 
+            // splitter2
+            // 
+            this.splitter2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter2.Location = new System.Drawing.Point(543, 0);
+            this.splitter2.Name = "splitter2";
+            this.splitter2.Size = new System.Drawing.Size(3, 435);
+            this.splitter2.TabIndex = 3;
+            this.splitter2.TabStop = false;
+            // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(200, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 435);
+            this.splitter1.TabIndex = 2;
+            this.splitter1.TabStop = false;
             // 
             // panel2
             // 
@@ -112,10 +135,11 @@ namespace Siesaso.Test.Gui
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(66, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(58, 25);
             this.toolStrip1.TabIndex = 0;
             // 
             // toolStripButton1
@@ -127,6 +151,16 @@ namespace Siesaso.Test.Gui
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = global::Siesaso.Test.Gui.Properties.Resources.Verein;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // VSNachbildung
             // 
@@ -157,8 +191,11 @@ namespace Siesaso.Test.Gui
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private Siesaso.Forms.EntityEditTabControl entityEditTabControl1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private Siesaso.Forms.EntityEditTabControl entityEditTabControl1;
+        private System.Windows.Forms.Splitter splitter2;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

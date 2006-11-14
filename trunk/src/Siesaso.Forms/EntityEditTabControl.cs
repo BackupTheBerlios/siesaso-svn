@@ -12,6 +12,13 @@ namespace Siesaso.Forms
 
         #region Methoden zum Verwalten der TabPages
 
+        /// <summary>
+        /// Bearbeitet das Objekt p mit dem Steuerelement control und 
+        /// zeigt das neue Tab mit der Überschrift header an.
+        /// </summary>
+        /// <param name="p">Entität zum Bearbeiten</param>
+        /// <param name="control">Steuerelement zum Bearbeiten/Anzeigen</param>
+        /// <param name="header">Überschrift des Registers</param>
         public void Edit(Object p, Type control, String header)
         {
             // Durchsuchen aller TabPages, ob das Objekt bereits dargestellt wird
@@ -21,7 +28,7 @@ namespace Siesaso.Forms
                 if (!(tp is EntityEditTabPage)) continue;
                 EntityEditTabPage etp = (EntityEditTabPage)tp;
 
-                if (etp.EditControl.Entity == p)
+                if (etp.EditControl.IsPresenting(p))
                 {
                     this.SelectedTab = etp;
                     isShown = true;
@@ -42,6 +49,7 @@ namespace Siesaso.Forms
         private void CreateTabPage(Object p, Type control, String header)
         {
             Control ctl = (Control)Activator.CreateInstance(control);
+            ctl.Dock = DockStyle.Fill;
           
             IEntityEditControl eeCtl = (IEntityEditControl)ctl;
             if (!eeCtl.CanPresent(p)) throw new InvalidOperationException("Objekt kann nicht dargestellt werden.");
@@ -66,7 +74,6 @@ namespace Siesaso.Forms
             this.Multiline = true;
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EntityEditTabControl_MouseClick);
             this.ResumeLayout(false);
-
         }
 
         public EntityEditTabControl()
@@ -95,5 +102,7 @@ namespace Siesaso.Forms
                     break;
             }
         }
+
+        
     }
 }

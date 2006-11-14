@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Siesaso.Hibernate;
-using Siesaso.Forms;
+using Siesaso.Controls;
 
 namespace Siesaso.Test.Gui
 {
@@ -34,6 +34,11 @@ namespace Siesaso.Test.Gui
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             entityEditTabControl1.Edit(Gürtel.List(), typeof(GürtelList), "Gürtel");
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            entityEditTabControl1.Edit(Verein.List(), typeof(VereinList), "Vereine");
         }
     }
 }

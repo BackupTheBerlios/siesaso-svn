@@ -72,6 +72,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
     <None Include="Properties\DataSources\Siesaso.Hibernate.Gürtel.datasource" />
@@ -92,6 +93,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Gürtel.bmp" />
+    <None Include="Resources\Verein.bmp" />
     <Content Include="SieSaSoDatenbank.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -100,6 +103,10 @@
     <ProjectReference Include="..\Dotnetuc.NHibernate\Dotnetuc.NHibernate.csproj">
       <Project>{31704FEC-6582-4C99-B2A3-8CF53F8B8E97}</Project>
       <Name>Dotnetuc.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Siesaso.Controls\Siesaso.Controls.csproj">
+      <Project>{92D8F05A-09F7-4897-82E3-9CE2A9D39C0F}</Project>
+      <Name>Siesaso.Controls</Name>
     </ProjectReference>
     <ProjectReference Include="..\Siesaso.Forms\Siesaso.Forms.csproj">
       <Project>{D3B58FD4-9608-4904-8F9C-DB5CEB056EA7}</Project>
