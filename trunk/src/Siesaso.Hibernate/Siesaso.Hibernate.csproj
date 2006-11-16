@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Geschlecht.cs" />
     <Compile Include="Internal\Entity.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -80,6 +81,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Mapping\Verein.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\Geschlecht.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

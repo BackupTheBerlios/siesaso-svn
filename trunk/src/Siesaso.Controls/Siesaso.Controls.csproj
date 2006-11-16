@@ -35,6 +35,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeschlechtList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GeschlechtList.Designer.cs">
+      <DependentUpon>GeschlechtList.cs</DependentUpon>
+    </Compile>
     <Compile Include="GürtelList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -73,6 +79,10 @@
     <EmbeddedResource Include="Icons\Gürtel.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GeschlechtList.resx">
+      <DependentUpon>GeschlechtList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Icons\Verein.bmp" />
     <EmbeddedResource Include="VereinList.resx">
       <SubType>Designer</SubType>
@@ -82,6 +92,9 @@
   <ItemGroup>
     <None Include="Properties\DataSources\Siesaso.Hibernate.Gürtel.datasource" />
     <None Include="Properties\DataSources\Siesaso.Hibernate.Verein.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\Geschlecht.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

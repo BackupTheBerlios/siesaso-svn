@@ -60,6 +60,13 @@ namespace Softwarekueche.Siesaso.Test.Gui.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Geschlecht {
+            get {
+                object obj = ResourceManager.GetObject("Geschlecht", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Gürtel {
             get {
                 object obj = ResourceManager.GetObject("Gürtel", resourceCulture);

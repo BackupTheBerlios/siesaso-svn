@@ -95,6 +95,7 @@
   <ItemGroup>
     <None Include="Resources\Gürtel.bmp" />
     <None Include="Resources\Verein.bmp" />
+    <None Include="Resources\Geschlecht.bmp" />
     <Content Include="SieSaSoDatenbank.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -40,5 +40,10 @@ namespace Softwarekueche.Siesaso.Test.Gui
         {
             entityEditTabControl1.Edit(Verein.List(), typeof(VereinList), "Vereine");
         }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            entityEditTabControl1.Edit(Geschlecht.List(), typeof(GeschlechtList), "Geschlechter");
+        }
     }
 }

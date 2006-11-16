@@ -31,7 +31,7 @@ namespace Softwarekueche.Siesaso.Test.Gui
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VSNachbildung));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.entityEditTabControl1 = new Siesaso.Forms.EntityEditTabControl();
+            this.entityEditTabControl1 = new Softwarekueche.Siesaso.Forms.EntityEditTabControl();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -41,6 +41,7 @@ namespace Softwarekueche.Siesaso.Test.Gui
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -129,17 +130,18 @@ namespace Softwarekueche.Siesaso.Test.Gui
             // 
             // bindingSource1
             // 
-            this.bindingSource1.DataSource = typeof(Siesaso.Hibernate.Gürtel);
+            this.bindingSource1.DataSource = typeof(Softwarekueche.Siesaso.Hibernate.Gürtel);
             // 
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
-            this.toolStripButton2});
+            this.toolStripButton2,
+            this.toolStripButton3});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(58, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(112, 25);
             this.toolStrip1.TabIndex = 0;
             // 
             // toolStripButton1
@@ -155,11 +157,22 @@ namespace Softwarekueche.Siesaso.Test.Gui
             // toolStripButton2
             // 
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = global::Softwarekueche.Siesaso.Test.Gui.Properties.Resources.Verein;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton2.Text = "toolStripButton2";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = global::Softwarekueche.Siesaso.Test.Gui.Properties.Resources.Geschlecht;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // VSNachbildung
             // 
@@ -196,5 +209,6 @@ namespace Softwarekueche.Siesaso.Test.Gui
         private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
     }
 }
