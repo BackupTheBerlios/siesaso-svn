@@ -7,7 +7,7 @@
     <ProjectGuid>{1B16F8FB-6CBC-4F0C-81B8-FB7EC7753F3C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Siesaso.Test.Nunit</RootNamespace>
+    <RootNamespace>Softwarekueche.Siesaso.Test.Nunit</RootNamespace>
     <AssemblyName>Siesaso.Test.Nunit</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

@@ -1,4 +1,4 @@
-﻿namespace Siesaso.Controls
+﻿namespace Softwarekueche.Siesaso.Controls
 {
     partial class GürtelList
     {

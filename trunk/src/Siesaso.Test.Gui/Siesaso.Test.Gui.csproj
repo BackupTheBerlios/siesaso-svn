@@ -7,7 +7,7 @@
     <ProjectGuid>{F1F391B8-DAFB-4B2C-AA2C-CF69997916DA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Siesaso.Test.Gui</RootNamespace>
+    <RootNamespace>Softwarekueche.Siesaso.Test.Gui</RootNamespace>
     <AssemblyName>Siesaso.Test.Gui</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

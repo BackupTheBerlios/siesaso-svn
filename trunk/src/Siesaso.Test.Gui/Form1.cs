@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-using Siesaso.Hibernate;
+using Softwarekueche.Siesaso.Hibernate;
 
-namespace Siesaso.Test.Gui
+namespace Softwarekueche.Siesaso.Test.Gui
 {
     public partial class MyForm : Form
     {

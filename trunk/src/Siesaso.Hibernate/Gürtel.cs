@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using Dotnetuc.NHibernate;
 
-namespace Siesaso.Hibernate
+namespace Softwarekueche.Siesaso.Hibernate
 {
     /// <summary>
     /// entität für die Gürtelfarben im Judo
     /// </summary>
-    public class Gürtel : Entity<Gürtel>
+    public class Gürtel : Internal.Entity<Gürtel>
     {
 
         protected override int PrimaryKey()

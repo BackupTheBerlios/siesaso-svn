@@ -1,4 +1,4 @@
-namespace Siesaso.Test.Gui
+namespace Softwarekueche.Siesaso.Test.Gui
 {
     partial class VSNachbildung
     {
@@ -155,7 +155,6 @@ namespace Siesaso.Test.Gui
             // toolStripButton2
             // 
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::Siesaso.Test.Gui.Properties.Resources.Verein;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);

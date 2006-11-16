@@ -7,11 +7,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Siesaso.Test.Gui")]
+[assembly: AssemblyTitle("Softwarekueche.Siesaso.Test.Gui")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Unilog Avinci GmbH")]
-[assembly: AssemblyProduct("Siesaso.Test.Gui")]
+[assembly: AssemblyProduct("Softwarekueche.Siesaso.Test.Gui")]
 [assembly: AssemblyCopyright("Copyright © Unilog Avinci GmbH 2006")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

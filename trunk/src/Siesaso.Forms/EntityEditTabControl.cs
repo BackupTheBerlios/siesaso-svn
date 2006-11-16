@@ -2,10 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-using Siesaso.Forms;
+using Softwarekueche.Siesaso.Forms;
 
-namespace Siesaso.Forms
+namespace Softwarekueche.Siesaso.Forms
 {
+    /// <summary>
+    /// TabControl mit einer Methode zum Bearbeiten von Entitäten.
+    /// </summary>
     [System.Drawing.ToolboxBitmap(typeof(TabControl))]
     public class EntityEditTabControl : TabControl
     {

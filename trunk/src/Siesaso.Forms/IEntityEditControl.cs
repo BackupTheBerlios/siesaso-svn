@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Siesaso.Forms
+namespace Softwarekueche.Siesaso.Forms
 {
     /// <summary>
     /// Schnittstelle für alle UserControls, die in der Lage sind, eine Entität 

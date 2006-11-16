@@ -5,11 +5,14 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
-using Siesaso.Forms;
-using Siesaso.Hibernate;
+using Softwarekueche.Siesaso.Forms;
+using Softwarekueche.Siesaso.Hibernate;
 
-namespace Siesaso.Controls
+namespace Softwarekueche.Siesaso.Controls
 {
+    /// <summary>
+    /// Liste zum Verwalten von Gürteln
+    /// </summary>
     [System.Drawing.ToolboxBitmap(typeof(GürtelList), "Icons.Gürtel")]
     public partial class GürtelList : UserControl, IEntityEditControl
     {

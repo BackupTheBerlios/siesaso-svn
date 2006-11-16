@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Siesaso.Test.Gui
+namespace Softwarekueche.Siesaso.Test.Gui
 {
     static class Program
     {
@@ -12,7 +12,7 @@ namespace Siesaso.Test.Gui
         [STAThread]
         static void Main()
         {
-            Siesaso.Hibernate.Session.InstanceDatabase = "SieSaSoDatenbank.mdb";
+            Siesaso.Hibernate.Internal.Session.InstanceDatabase = "SieSaSoDatenbank.mdb";
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

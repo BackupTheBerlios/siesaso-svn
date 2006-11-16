@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Siesaso.Forms
+namespace Softwarekueche.Siesaso.Forms
 {
+    /// <summary>
+    /// TabPage mit einer Entity-Edit-Control Eigenschaft
+    /// </summary>
     public class EntityEditTabPage : System.Windows.Forms.TabPage
     {
         public EntityEditTabPage(IEntityEditControl initEntity)

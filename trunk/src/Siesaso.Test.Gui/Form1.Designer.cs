@@ -1,4 +1,4 @@
-namespace Siesaso.Test.Gui
+namespace Softwarekueche.Siesaso.Test.Gui
 {
     partial class MyForm
     {

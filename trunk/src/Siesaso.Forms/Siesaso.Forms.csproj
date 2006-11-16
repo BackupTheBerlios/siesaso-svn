@@ -7,7 +7,7 @@
     <ProjectGuid>{D3B58FD4-9608-4904-8F9C-DB5CEB056EA7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Siesaso.Forms</RootNamespace>
+    <RootNamespace>Softwarekueche.Siesaso.Forms</RootNamespace>
     <AssemblyName>Siesaso.Forms</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

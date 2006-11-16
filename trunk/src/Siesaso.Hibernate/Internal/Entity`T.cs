@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Siesaso.Hibernate
+namespace Softwarekueche.Siesaso.Hibernate.Internal
 {
     /// <summary>
     /// Basisklasse für eine SieSaSo Entität. Es werden Funktionen für die

@@ -4,7 +4,7 @@ using System.Text;
 using NHibernate;
 using NHibernate.Cfg;
 
-namespace Siesaso.Hibernate
+namespace Softwarekueche.Siesaso.Hibernate.Internal
 {
     public class Session : IDisposable
     {

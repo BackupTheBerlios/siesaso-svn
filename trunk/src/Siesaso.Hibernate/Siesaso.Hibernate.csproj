@@ -58,14 +58,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity.cs">
+    <Compile Include="Internal\Entity.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entity`T.cs">
+    <Compile Include="Internal\Entity`T.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Gürtel.cs" />
-    <Compile Include="Session.cs" />
+    <Compile Include="Internal\Session.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Verein.cs" />
   </ItemGroup>
@@ -79,7 +79,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Mapping\Verein.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Verein.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

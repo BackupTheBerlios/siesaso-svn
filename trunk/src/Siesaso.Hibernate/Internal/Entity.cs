@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Dotnetuc.NHibernate;
 
-namespace Siesaso.Hibernate
+namespace Softwarekueche.Siesaso.Hibernate.Internal
 {
     /// <summary>
     /// Basisklasse mit den Abstrakten nicht-generischen Funktionen aller

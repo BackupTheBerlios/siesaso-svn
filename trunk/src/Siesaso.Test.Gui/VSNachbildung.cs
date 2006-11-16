@@ -5,10 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Siesaso.Hibernate;
-using Siesaso.Controls;
+using Softwarekueche.Siesaso.Hibernate;
+using Softwarekueche.Siesaso.Controls;
 
-namespace Siesaso.Test.Gui
+namespace Softwarekueche.Siesaso.Test.Gui
 {
     public partial class VSNachbildung : Form
     {
