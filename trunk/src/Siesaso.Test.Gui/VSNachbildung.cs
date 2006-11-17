@@ -20,15 +20,29 @@ namespace Softwarekueche.Siesaso.Test.Gui
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem == null) return;
-            //if (!(listBox1.SelectedItem is IEditable)) return;
 
-            entityEditTabControl1.Edit(listBox1.SelectedItem, typeof(GürtelList), listBox1.SelectedItem.ToString());
-         }
+            if (listBox1.SelectedItem is Gürtel)
+            {
+                entityEditTabControl1.Edit(listBox1.SelectedItem, typeof(GürtelList), listBox1.SelectedItem.ToString());
+            }
+            else if (listBox1.SelectedItem is Judoka)
+            {
+                entityEditTabControl1.Edit(listBox1.SelectedItem, typeof(JudokaList), listBox1.SelectedItem.ToString());
+            }
+        }
 
         private void VSNachbildung_Load(object sender, EventArgs e)
         {
-            bindingSource1.DataSource = Gürtel.List();
-
+            System.Collections.Generic.List<Object> arrayList = new System.Collections.Generic.List<Object>();
+            foreach (object itm in Gürtel.List())
+            {
+                arrayList.Add(itm);
+            }
+            foreach (object itm in Judoka.List())
+            {
+                arrayList.Add(itm);
+            }
+            bindingSource1.DataSource = arrayList;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -44,6 +58,11 @@ namespace Softwarekueche.Siesaso.Test.Gui
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             entityEditTabControl1.Edit(Geschlecht.List(), typeof(GeschlechtList), "Geschlechter");
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            entityEditTabControl1.Edit(Judoka.List(), typeof(JudokaList), "Judokas");
         }
     }
 }

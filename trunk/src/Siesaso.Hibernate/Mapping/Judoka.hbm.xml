@@ -4,17 +4,25 @@
                    namespace="Softwarekueche.Siesaso.Hibernate"
                    assembly="Siesaso.Hibernate">
 
-    <class name="Gürtel">
+    <class name="Judoka">
 
         <id name="Id" type="Int32">
             <generator class="identity" />
         </id>
 
-        <property name="Nummer" type="Int32" />
+        <property name="Vorname" type="String" />
 
-        <property name="Name" type="String" />
+        <property name="Nachname" type="String" />
 
-        <property name="Farbe" type="String" />
+        <property name="Zusatz" type="String" />
+
+        <property name="Geburtsdatum" type="DateTime" />
+
+        <many-to-one name="Gürtel" />
+
+        <many-to-one name="Geschlecht" />
+
+        <many-to-one name="Verein" />
 
     </class>
     

@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Judoka.cs" />
     <Compile Include="Geschlecht.cs" />
     <Compile Include="Internal\Entity.cs">
       <SubType>Code</SubType>
@@ -84,6 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Mapping\Geschlecht.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\Judoka.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

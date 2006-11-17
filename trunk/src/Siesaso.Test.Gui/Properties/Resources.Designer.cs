@@ -74,6 +74,13 @@ namespace Softwarekueche.Siesaso.Test.Gui.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Judoka {
+            get {
+                object obj = ResourceManager.GetObject("Judoka", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Verein {
             get {
                 object obj = ResourceManager.GetObject("Verein", resourceCulture);

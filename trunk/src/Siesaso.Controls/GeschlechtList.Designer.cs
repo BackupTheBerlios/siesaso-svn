@@ -30,10 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.GeschlechtDataGridView = new System.Windows.Forms.DataGridView();
-            this.GeschlechtBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.GeschlechtEntityPersister = new Dotnetuc.NHibernate.EntityPersister(this.components);
             this.Kurz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GeschlechtBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kurzDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.langDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isUnsavedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GeschlechtDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GeschlechtBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +48,10 @@
             this.GeschlechtDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GeschlechtDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Kurz,
-            this.Lang});
+            this.Lang,
+            this.kurzDataGridViewTextBoxColumn,
+            this.langDataGridViewTextBoxColumn,
+            this.isUnsavedDataGridViewCheckBoxColumn});
             this.GeschlechtDataGridView.DataSource = this.GeschlechtBindingSource;
             this.GeschlechtDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GeschlechtDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -55,14 +60,6 @@
             this.GeschlechtDataGridView.RowHeadersVisible = false;
             this.GeschlechtDataGridView.Size = new System.Drawing.Size(391, 395);
             this.GeschlechtDataGridView.TabIndex = 0;
-            // 
-            // GeschlechtBindingSource
-            // 
-            this.GeschlechtBindingSource.DataSource = typeof(Softwarekueche.Siesaso.Hibernate.Geschlecht);
-            // 
-            // GeschlechtEntityPersister
-            // 
-            this.GeschlechtEntityPersister.BindingSource = this.GeschlechtBindingSource;
             // 
             // Kurz
             // 
@@ -77,6 +74,31 @@
             this.Lang.HeaderText = "Lang";
             this.Lang.Name = "Lang";
             this.Lang.ReadOnly = true;
+            // 
+            // GeschlechtBindingSource
+            // 
+            this.GeschlechtBindingSource.DataSource = typeof(Softwarekueche.Siesaso.Hibernate.Geschlecht);
+            // 
+            // kurzDataGridViewTextBoxColumn
+            // 
+            this.kurzDataGridViewTextBoxColumn.DataPropertyName = "Kurz";
+            this.kurzDataGridViewTextBoxColumn.HeaderText = "Kurz";
+            this.kurzDataGridViewTextBoxColumn.Name = "kurzDataGridViewTextBoxColumn";
+            this.kurzDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // langDataGridViewTextBoxColumn
+            // 
+            this.langDataGridViewTextBoxColumn.DataPropertyName = "Lang";
+            this.langDataGridViewTextBoxColumn.HeaderText = "Lang";
+            this.langDataGridViewTextBoxColumn.Name = "langDataGridViewTextBoxColumn";
+            this.langDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // isUnsavedDataGridViewCheckBoxColumn
+            // 
+            this.isUnsavedDataGridViewCheckBoxColumn.DataPropertyName = "IsUnsaved";
+            this.isUnsavedDataGridViewCheckBoxColumn.HeaderText = "IsUnsaved";
+            this.isUnsavedDataGridViewCheckBoxColumn.Name = "isUnsavedDataGridViewCheckBoxColumn";
+            this.isUnsavedDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // GeschlechtList
             // 
@@ -99,8 +121,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nummerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn farbeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private Dotnetuc.NHibernate.EntityPersister GeschlechtEntityPersister;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kurz;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kurzDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn langDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isUnsavedDataGridViewCheckBoxColumn;
     }
 }

@@ -11,20 +11,36 @@ namespace Softwarekueche.Siesaso.Hibernate
     public class Gürtel : Internal.Entity<Gürtel>
     {
 
+        #region Überschreibungen
+
         protected override int PrimaryKey()
         {
             return id;
         }
 
+        public override string ToString()
+        {
+            return name;
+        }
+
+        #endregion
+
+        #region Mapping
+
         private int id;
 
+        private String name;
+
+        private String farbe;
+
+        private int nummer;
+
+        
         public virtual int Id
         {
             get { return id; }
             set { id = value; }
         }
-
-        private String farbe;
 
         public virtual String Farbe
         {
@@ -32,15 +48,11 @@ namespace Softwarekueche.Siesaso.Hibernate
             set { farbe = value; }
         }
 
-        private int nummer;
-
         public virtual int Nummer
         {
             get { return nummer; }
             set { nummer = value; }
         }
-
-        private String name;
 
         public virtual String Name
         {
@@ -48,9 +60,7 @@ namespace Softwarekueche.Siesaso.Hibernate
             set { name = value; }
         }
 
-        public override string ToString()
-        {
-            return name;
-        }
+        #endregion
+
     }
 }

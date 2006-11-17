@@ -6,6 +6,22 @@ namespace Softwarekueche.Siesaso.Hibernate
 {
     public class Verein : Internal.Entity<Verein>
     {
+        #region Überschreibungen
+
+        protected override int PrimaryKey()
+        {
+            return id;
+        }
+
+        public override string ToString()
+        {
+            return Langname;
+        }
+
+        #endregion
+
+        #region Mapping
+
         private int id;
         private String name;
         private String langname;
@@ -42,9 +58,7 @@ namespace Softwarekueche.Siesaso.Hibernate
             set { id = value; }
         }
 
-        protected override int PrimaryKey()
-        {
-            return id;
-        }
+        #endregion
+
     }
 }

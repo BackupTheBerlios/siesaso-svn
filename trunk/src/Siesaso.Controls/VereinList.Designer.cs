@@ -29,34 +29,34 @@ namespace Softwarekueche.Siesaso.Controls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.vereinBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vereinDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.vereinEntityPersister = new Dotnetuc.NHibernate.EntityPersister(this.components);
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.langnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.vereinBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vereinDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // vereinBindingSource
             // 
-            this.vereinBindingSource.DataSource = typeof(Siesaso.Hibernate.Verein);
+            this.vereinBindingSource.DataSource = typeof(Softwarekueche.Siesaso.Hibernate.Verein);
             // 
             // vereinDataGridView
             // 
             this.vereinDataGridView.AllowUserToAddRows = false;
             this.vereinDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.vereinDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.vereinDataGridView.AutoGenerateColumns = false;
             this.vereinDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewCheckBoxColumn1});
+            this.nameDataGridViewTextBoxColumn,
+            this.langnameDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.adresseDataGridViewTextBoxColumn});
             this.vereinDataGridView.DataSource = this.vereinBindingSource;
             this.vereinDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.vereinDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -65,47 +65,37 @@ namespace Softwarekueche.Siesaso.Controls
             this.vereinDataGridView.Size = new System.Drawing.Size(469, 445);
             this.vereinDataGridView.TabIndex = 1;
             // 
-            // dataGridViewTextBoxColumn1
+            // vereinEntityPersister
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Adresse";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Adresse";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.vereinEntityPersister.BindingSource = this.vereinBindingSource;
             // 
-            // dataGridViewTextBoxColumn2
+            // nameDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // langnameDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.langnameDataGridViewTextBoxColumn.DataPropertyName = "Langname";
+            this.langnameDataGridViewTextBoxColumn.HeaderText = "Langname";
+            this.langnameDataGridViewTextBoxColumn.Name = "langnameDataGridViewTextBoxColumn";
+            this.langnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // emailDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn5
+            // adresseDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Langname";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Langname";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "IsUnsaved";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "IsUnsaved";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.adresseDataGridViewTextBoxColumn.DataPropertyName = "Adresse";
+            this.adresseDataGridViewTextBoxColumn.HeaderText = "Adresse";
+            this.adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
+            this.adresseDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // VereinList
             // 
@@ -124,11 +114,10 @@ namespace Softwarekueche.Siesaso.Controls
 
         private System.Windows.Forms.BindingSource vereinBindingSource;
         private System.Windows.Forms.DataGridView vereinDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private Dotnetuc.NHibernate.EntityPersister vereinEntityPersister;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn langnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adresseDataGridViewTextBoxColumn;
     }
 }

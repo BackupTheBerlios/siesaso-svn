@@ -54,5 +54,14 @@ namespace Softwarekueche.Siesaso.Hibernate.Internal
         }
 
         #endregion
+
+        #region DataBinding Helper
+
+        public virtual object Instance
+        {
+            get { return this; }
+        }
+
+        #endregion
     }
 }

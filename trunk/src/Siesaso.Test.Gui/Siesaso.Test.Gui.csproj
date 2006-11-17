@@ -96,6 +96,7 @@
     <None Include="Resources\Gürtel.bmp" />
     <None Include="Resources\Verein.bmp" />
     <None Include="Resources\Geschlecht.bmp" />
+    <None Include="Resources\Judoka.bmp" />
     <Content Include="SieSaSoDatenbank.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

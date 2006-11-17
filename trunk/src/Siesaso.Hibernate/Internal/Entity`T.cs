@@ -12,6 +12,8 @@ namespace Softwarekueche.Siesaso.Hibernate.Internal
     public abstract class Entity<keytype> : Entity
     {
 
+        #region Abfragen
+
         /// <summary>
         /// Ermitteln einer Liste aller Objekte der Entitäten.
         /// </summary>
@@ -19,5 +21,7 @@ namespace Softwarekueche.Siesaso.Hibernate.Internal
         {
             return Session.Instance.Get.CreateCriteria(typeof(keytype)).List<keytype>();
         }
+
+        #endregion
     }
 }

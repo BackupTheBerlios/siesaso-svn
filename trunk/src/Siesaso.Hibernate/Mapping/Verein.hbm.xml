@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<hibernate-mapping xmlns="urn:nhibernate-mapping-2.0"
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
                    namespace="Softwarekueche.Siesaso.Hibernate"
                    assembly="Siesaso.Hibernate">
 
-    <class name="Verein" table="Verein">
+    <class name="Verein">
 
         <id name="Id" type="Int32">
             <generator class="identity" />

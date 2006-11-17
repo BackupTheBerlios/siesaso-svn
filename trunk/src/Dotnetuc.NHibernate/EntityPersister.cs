@@ -18,12 +18,15 @@ namespace Dotnetuc.NHibernate
     [System.Drawing.ToolboxBitmap(typeof(BindingSourceInterceptor), "Icons.EntityPersister")]
     public partial class EntityPersister : Component
     {
+
+        #region Logger
         /// <summary>
         /// Instanz des Named-Loggers. Der Namen des Loggers entspricht dem FullName der Klasse. Dadurch
         /// wird durch den Namespace die Logger-Hierarchie aufgebaut.
         /// </summary>
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        
+        #endregion
+
         public EntityPersister()
         {
             InitializeComponent();
