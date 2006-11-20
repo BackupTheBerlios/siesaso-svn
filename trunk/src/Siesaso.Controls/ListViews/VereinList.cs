@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -8,14 +8,20 @@ using System.Windows.Forms;
 using Softwarekueche.Siesaso.Forms;
 using Softwarekueche.Siesaso.Hibernate;
 
-namespace Softwarekueche.Siesaso.Controls
+namespace Softwarekueche.Siesaso.Controls.ListViews
 {
     /// <summary>
-    /// Liste zum Verwalten von Gürteln
+    /// Liste zum Verwalten von Vereinen
     /// </summary>
-    [System.Drawing.ToolboxBitmap(typeof(GürtelList), "Icons.Gürtel")]
-    public partial class GürtelList : UserControl, IEntityEditControl
+    [System.Drawing.ToolboxBitmap(typeof(VereinList), "Icons.Verein")]
+    public partial class VereinList : UserControl, IEntityEditControl
     {
+        public VereinList()
+        {
+            InitializeComponent();
+        }
+
+        #region IEntityEditControl Members
 
         private Object entity;
 
@@ -25,22 +31,14 @@ namespace Softwarekueche.Siesaso.Controls
             set
             {
                 entity = value;
-                gürtelBindingSource.DataSource = entity;
+                vereinBindingSource.DataSource = value;
             }
         }
 
-        public GürtelList()
-        {
-            InitializeComponent();
-        }
-
-        #region IEntityEditControl Members
-
-
         public bool CanPresent(object entity)
         {
-            if (entity is List<Gürtel>) return true;
-            if (entity is Gürtel) return true;
+            if (entity is List<Verein>) return true;
+            if (entity is Verein) return true;
             return false;
         }
 
@@ -51,8 +49,8 @@ namespace Softwarekueche.Siesaso.Controls
 
         public bool IsPresenting(object testEntity)
         {
-            if (testEntity is List<Gürtel> && entity is List<Gürtel>) return true;
-            if (testEntity is Gürtel && testEntity == entity) return true;
+            if (testEntity is List<Verein> && entity is List<Verein>) return true;
+            if (testEntity is Verein && testEntity == entity) return true;
 
             return false;
         }

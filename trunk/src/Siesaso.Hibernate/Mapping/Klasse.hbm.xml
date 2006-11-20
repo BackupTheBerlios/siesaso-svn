@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Softwarekueche.Siesaso.Hibernate"
+                   assembly="Siesaso.Hibernate">
+
+    <class name="Klasse">
+
+        <id name="Id" type="Int32">
+            <generator class="identity" />
+        </id>
+
+        <property name="Name" type="String" />
+
+        <property name="Langname" type="String" />
+
+        <property name="MaxAlter" type="Int32" />
+
+        <property name="MaxGewicht" type="Double" />
+
+        <many-to-one name="Geschlecht" />
+
+    </class>
+    
+</hibernate-mapping>
+                   

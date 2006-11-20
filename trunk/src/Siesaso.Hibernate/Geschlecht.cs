@@ -5,13 +5,24 @@ using System.Text;
 namespace Softwarekueche.Siesaso.Hibernate
 {
     /// <summary>
-    /// Das geschlecht ist keine Entität, die über
-    /// den Entity-Persister gespeichert wird. Ist auch
-    /// eher unwahrscheinlich, dass Geschlechter hinzukommen.
+    /// Das Geschlecht ist eine Entität, deren Primärschlüssel ein
+    /// String mit der Länge "1".
     /// </summary>
     public class Geschlecht : Internal.Entity<Geschlecht>
     {
+        #region Überschreibungen
+
+        public override String ToString()
+        {
+            return lang;
+        }
+
+        #endregion
+
+        #region Mapping
+
         private String kurz;
+
         private String lang;
 
         public virtual String Kurz
@@ -31,5 +42,7 @@ namespace Softwarekueche.Siesaso.Hibernate
             if (kurz == "") return 0;
             return -1;
         }
+
+        #endregion
     }
 }

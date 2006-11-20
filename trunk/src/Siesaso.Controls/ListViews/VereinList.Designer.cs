@@ -1,4 +1,4 @@
-namespace Softwarekueche.Siesaso.Controls
+namespace Softwarekueche.Siesaso.Controls.ListViews
 {
     partial class VereinList
     {

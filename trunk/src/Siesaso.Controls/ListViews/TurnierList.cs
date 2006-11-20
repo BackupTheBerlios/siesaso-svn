@@ -8,15 +8,15 @@ using System.Windows.Forms;
 using Softwarekueche.Siesaso.Forms;
 using Softwarekueche.Siesaso.Hibernate;
 
-namespace Softwarekueche.Siesaso.Controls
+namespace Softwarekueche.Siesaso.Controls.ListViews
 {
     /// <summary>
-    /// Liste zum Verwalten von Vereinen
+    /// Liste zum Verwalten von Turnieren
     /// </summary>
-    [System.Drawing.ToolboxBitmap(typeof(GürtelList), "Icons.Verein")]
-    public partial class VereinList : UserControl, IEntityEditControl
+    [System.Drawing.ToolboxBitmap(typeof(VereinList), "Icons.Turnier")]
+    public partial class TurnierList : UserControl, IEntityEditControl
     {
-        public VereinList()
+        public TurnierList()
         {
             InitializeComponent();
         }
@@ -31,14 +31,14 @@ namespace Softwarekueche.Siesaso.Controls
             set
             {
                 entity = value;
-                vereinBindingSource.DataSource = value;
+                TurnierBindingSource.DataSource = value;
             }
         }
 
         public bool CanPresent(object entity)
         {
-            if (entity is List<Verein>) return true;
-            if (entity is Verein) return true;
+            if (entity is List<Turnier>) return true;
+            if (entity is Turnier) return true;
             return false;
         }
 
@@ -49,8 +49,8 @@ namespace Softwarekueche.Siesaso.Controls
 
         public bool IsPresenting(object testEntity)
         {
-            if (testEntity is List<Verein> && entity is List<Verein>) return true;
-            if (testEntity is Verein && testEntity == entity) return true;
+            if (testEntity is List<Turnier> && entity is List<Turnier>) return true;
+            if (testEntity is Turnier && testEntity == entity) return true;
 
             return false;
         }

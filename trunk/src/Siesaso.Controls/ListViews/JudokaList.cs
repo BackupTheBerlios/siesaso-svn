@@ -8,12 +8,12 @@ using System.Windows.Forms;
 using Softwarekueche.Siesaso.Forms;
 using Softwarekueche.Siesaso.Hibernate;
 
-namespace Softwarekueche.Siesaso.Controls
+namespace Softwarekueche.Siesaso.Controls.ListViews
 {
     /// <summary>
     /// Liste zum Verwalten von Judokaen
     /// </summary>
-    [System.Drawing.ToolboxBitmap(typeof(GürtelList), "Icons.Judoka")]
+    [System.Drawing.ToolboxBitmap(typeof(JudokaList), "Icons.Judoka")]
     public partial class JudokaList : UserControl, IEntityEditControl
     {
         public JudokaList()

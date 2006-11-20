@@ -8,13 +8,13 @@ using System.Windows.Forms;
 using Softwarekueche.Siesaso.Forms;
 using Softwarekueche.Siesaso.Hibernate;
 
-namespace Softwarekueche.Siesaso.Controls
+namespace Softwarekueche.Siesaso.Controls.ListViews
 {
     /// <summary>
-    /// Liste zum Verwalten von Geschlechtn
+    /// Liste zum Verwalten von Gürteln
     /// </summary>
-    [System.Drawing.ToolboxBitmap(typeof(GeschlechtList), "Icons.Geschlecht")]
-    public partial class GeschlechtList : UserControl, IEntityEditControl
+    [System.Drawing.ToolboxBitmap(typeof(GürtelList), "Icons.Gürtel")]
+    public partial class GürtelList : UserControl, IEntityEditControl
     {
 
         private Object entity;
@@ -25,11 +25,11 @@ namespace Softwarekueche.Siesaso.Controls
             set
             {
                 entity = value;
-                GeschlechtBindingSource.DataSource = entity;
+                gürtelBindingSource.DataSource = entity;
             }
         }
 
-        public GeschlechtList()
+        public GürtelList()
         {
             InitializeComponent();
         }
@@ -39,8 +39,8 @@ namespace Softwarekueche.Siesaso.Controls
 
         public bool CanPresent(object entity)
         {
-            if (entity is List<Geschlecht>) return true;
-            if (entity is Geschlecht) return true;
+            if (entity is List<Gürtel>) return true;
+            if (entity is Gürtel) return true;
             return false;
         }
 
@@ -51,8 +51,8 @@ namespace Softwarekueche.Siesaso.Controls
 
         public bool IsPresenting(object testEntity)
         {
-            if (testEntity is List<Geschlecht> && entity is List<Geschlecht>) return true;
-            if (testEntity is Geschlecht && testEntity == entity) return true;
+            if (testEntity is List<Gürtel> && entity is List<Gürtel>) return true;
+            if (testEntity is Gürtel && testEntity == entity) return true;
 
             return false;
         }

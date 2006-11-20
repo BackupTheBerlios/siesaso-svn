@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Softwarekueche.Siesaso.Hibernate"
+                   assembly="Siesaso.Hibernate">
+
+    <class name="Kämpfer">
+
+        <id name="Id" type="Int32">
+            <generator class="identity" />
+        </id>
+
+        <property name="Punkte" type="Int32" />
+
+        <property name="PunkteReal" type="Int32" />
+
+        <property name="Gewicht" type="Double" />
+
+        <many-to-one name="Turnier" />
+
+        <many-to-one name="Judoka" />
+
+        <many-to-one name="Klasse" />
+
+        <many-to-one name="KlasseReal" class="Klasse" />
+
+    </class>
+    
+    
+</hibernate-mapping>
+                   

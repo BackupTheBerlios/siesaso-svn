@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
 using Softwarekueche.Siesaso.Forms;
 
 namespace Softwarekueche.Siesaso.Forms
@@ -12,6 +13,8 @@ namespace Softwarekueche.Siesaso.Forms
     [System.Drawing.ToolboxBitmap(typeof(TabControl))]
     public class EntityEditTabControl : TabControl
     {
+        private ImageList images;
+        private System.ComponentModel.IContainer components;
 
         #region Methoden zum Verwalten der TabPages
 
@@ -61,6 +64,7 @@ namespace Softwarekueche.Siesaso.Forms
             EntityEditTabPage tp = new EntityEditTabPage(eeCtl, header);
 
             tp.Controls.Add(ctl);
+            tp.ImageIndex = 0;
 
             this.TabPages.Add(tp);
             this.SelectedTab = tp;
@@ -68,15 +72,29 @@ namespace Softwarekueche.Siesaso.Forms
 
         #endregion
 
+        #region Designer Code
+
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntityEditTabControl));
+            this.images = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
+            // 
+            // images
+            // 
+            this.images.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("images.ImageStream")));
+            this.images.TransparentColor = System.Drawing.Color.Transparent;
+            this.images.Images.SetKeyName(0, "X.png");
             // 
             // EntityEditTabControl
             // 
-            this.Multiline = true;
+            this.ImageList = this.images;
+            this.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.EntityEditTabControl_Selecting);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.EntityEditTabControl_MouseMove);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EntityEditTabControl_MouseClick);
             this.ResumeLayout(false);
+
         }
 
         public EntityEditTabControl()
@@ -84,11 +102,27 @@ namespace Softwarekueche.Siesaso.Forms
             this.InitializeComponent();
         }
 
+        #endregion
+
+        #region Control-Events
+
+        MouseEventArgs moveEventArgs = null;
+
         private void EntityEditTabControl_MouseClick(object sender, MouseEventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("TabControl Click bei: " + (new System.Drawing.Point(e.X, e.Y)).ToString());
+
             switch (e.Button)
             {
                 case MouseButtons.Left:
+                    for (int i = 0; i < this.TabPages.Count; i++)
+                    {
+                        Rectangle tabRect = this.GetTabRect(i);
+                        if (e.X > tabRect.X + 2 && e.X < tabRect.X + 17 && e.Y > tabRect.Y && e.Y < tabRect.Y + 17)
+                        {
+                            this.TabPages.Remove(this.TabPages[i]);
+                        }
+                    }
                     break;
                 case MouseButtons.Middle:
                     break;
@@ -106,6 +140,30 @@ namespace Softwarekueche.Siesaso.Forms
             }
         }
 
-        
+        private void EntityEditTabControl_MouseMove(object sender, MouseEventArgs e)
+        {
+            moveEventArgs = e;
+        }
+
+        private void EntityEditTabControl_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("Selection Action: " + e.Action.ToString());
+
+            switch (e.Action)
+            {
+                case TabControlAction.Deselected:
+                    break;
+                case TabControlAction.Deselecting:
+                    break;
+                case TabControlAction.Selected:
+                    break;
+                case TabControlAction.Selecting:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        #endregion
     }
 }

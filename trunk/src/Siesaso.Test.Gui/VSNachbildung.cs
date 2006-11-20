@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Softwarekueche.Siesaso.Hibernate;
-using Softwarekueche.Siesaso.Controls;
+using Softwarekueche.Siesaso.Controls.ListViews;
 
 namespace Softwarekueche.Siesaso.Test.Gui
 {
@@ -63,6 +63,37 @@ namespace Softwarekueche.Siesaso.Test.Gui
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             entityEditTabControl1.Edit(Judoka.List(), typeof(JudokaList), "Judokas");
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            entityEditTabControl1.Edit(Klasse.List(), typeof(KlasseList), "Wettkampfklassen");
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            entityEditTabControl1.Edit(K‰mpfer.List(), typeof(K‰mpferList), "Liste der K‰mpfer");
+        }
+
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            entityEditTabControl1.Edit(Turnier.List(), typeof(TurnierList), "Liste der Turniere");
+        }
+
+        private void schlieﬂenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (entityEditTabControl1.SelectedTab == null) return;
+            entityEditTabControl1.TabPages.Remove(entityEditTabControl1.SelectedTab);
+        }
+
+        private void alleSchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            entityEditTabControl1.TabPages.Clear();
+        }
+
+        private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

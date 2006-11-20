@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Softwarekueche.Siesaso.Test.Gui.Properties {
+namespace Softwarekueche.Siesaso.Forms.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Softwarekueche.Siesaso.Test.Gui.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Softwarekueche.Siesaso.Test.Gui.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Softwarekueche.Siesaso.Forms.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,55 +57,6 @@ namespace Softwarekueche.Siesaso.Test.Gui.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Geschlecht {
-            get {
-                object obj = ResourceManager.GetObject("Geschlecht", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Gürtel {
-            get {
-                object obj = ResourceManager.GetObject("Gürtel", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Judoka {
-            get {
-                object obj = ResourceManager.GetObject("Judoka", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Kämpfer {
-            get {
-                object obj = ResourceManager.GetObject("Kämpfer", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Klasse {
-            get {
-                object obj = ResourceManager.GetObject("Klasse", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Turnier {
-            get {
-                object obj = ResourceManager.GetObject("Turnier", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Verein {
-            get {
-                object obj = ResourceManager.GetObject("Verein", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

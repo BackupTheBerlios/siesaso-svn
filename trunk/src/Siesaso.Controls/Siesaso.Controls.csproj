@@ -18,6 +18,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Siesaso.Controls.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,34 +36,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JudokaList.cs">
+    <Compile Include="ListViews\TurnierList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="JudokaList.Designer.cs">
+    <Compile Include="ListViews\TurnierList.Designer.cs">
+      <DependentUpon>TurnierList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\KämpferList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\KämpferList.Designer.cs">
+      <DependentUpon>KämpferList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\KlasseList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\KlasseList.Designer.cs">
+      <DependentUpon>KlasseList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\JudokaList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\JudokaList.Designer.cs">
       <DependentUpon>JudokaList.cs</DependentUpon>
     </Compile>
-    <Compile Include="GeschlechtList.cs">
+    <Compile Include="ListViews\GeschlechtList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GeschlechtList.Designer.cs">
+    <Compile Include="ListViews\GeschlechtList.Designer.cs">
       <DependentUpon>GeschlechtList.cs</DependentUpon>
     </Compile>
-    <Compile Include="GürtelList.cs">
+    <Compile Include="ListViews\GürtelList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GürtelList.Designer.cs">
+    <Compile Include="ListViews\GürtelList.Designer.cs">
       <DependentUpon>GürtelList.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VereinList.cs">
+    <Compile Include="ListViews\VereinList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="VereinList.Designer.cs">
+    <Compile Include="ListViews\VereinList.Designer.cs">
       <DependentUpon>VereinList.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GürtelList.resx">
+    <EmbeddedResource Include="ListViews\GürtelList.resx">
       <DependentUpon>GürtelList.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -85,12 +104,12 @@
     <EmbeddedResource Include="Icons\Gürtel.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GeschlechtList.resx">
+    <EmbeddedResource Include="ListViews\GeschlechtList.resx">
       <DependentUpon>GeschlechtList.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Icons\Verein.bmp" />
-    <EmbeddedResource Include="VereinList.resx">
+    <EmbeddedResource Include="ListViews\VereinList.resx">
       <SubType>Designer</SubType>
       <DependentUpon>VereinList.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,7 +118,11 @@
     <EmbeddedResource Include="Icons\Geschlecht.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="JudokaList.resx">
+    <EmbeddedResource Include="ListViews\KlasseList.resx">
+      <DependentUpon>KlasseList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\JudokaList.resx">
       <DependentUpon>JudokaList.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -108,6 +131,23 @@
   <ItemGroup>
     <None Include="Properties\DataSources\Softwarekueche.Siesaso.Hibernate.Gürtel.datasource" />
     <None Include="Properties\DataSources\Softwarekueche.Siesaso.Hibernate.Verein.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ListViews\TurnierList.resx">
+      <DependentUpon>TurnierList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\KämpferList.resx">
+      <DependentUpon>KämpferList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\Klasse.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\Turnier.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\Kämpfer.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

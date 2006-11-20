@@ -118,6 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Judoka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Judoka.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Kämpfer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kämpfer.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Geschlecht" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Geschlecht.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -127,7 +133,10 @@
   <data name="Verein" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Verein.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Judoka" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Judoka.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Klasse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Klasse.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Turnier" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Turnier.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
