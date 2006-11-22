@@ -28,7 +28,7 @@
     <property name="debugdir"   value="${root}\SieSaSo.Admin\Debug\bin"/>
     <property name="logdir"     value="${root}\Log"/>
     <property name="tempdir"    value="${root}\Temp"/>
-    <property name="releasedir" value="${root}\Release"/>
+    <property name="releasedir" value="${root}\..\Bin"/>
     <property name="packagedir" value="${root}\..\Pakete"/>
 
     <property name="shortdate"  value="${dotnetuc::buildDate()}" />

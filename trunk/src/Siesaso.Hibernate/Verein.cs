@@ -84,5 +84,18 @@ namespace Softwarekueche.Siesaso.Hibernate
 
         #endregion
 
+
+        public string GetNameHash()
+        {
+            String res = name.ToLower();
+            String res2 = "";
+
+            for (int i = 0; i < res.Length; i++)
+            {
+                if (res[i] >= 'a' && res[i] < 'z') res2 = res2 + res[i].ToString();
+            }
+
+            return res2;
+        }
     }
 }
