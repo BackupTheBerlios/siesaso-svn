@@ -18,6 +18,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siesaso.Forms", "Siesaso.Fo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siesaso.Controls", "Siesaso.Controls\Siesaso.Controls.csproj", "{92D8F05A-09F7-4897-82E3-9CE2A9D39C0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siesaso.Anmeldung2Csv", "Siesaso.Anmeldung2Csv\Siesaso.Anmeldung2Csv.csproj", "{70F09DCA-D6A0-405F-AF01-641582327A03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnetuc.CsvMapper", "Dotnetuc.CsvMapper\Dotnetuc.CsvMapper.csproj", "{F4F98038-B3F0-4CE1-AD3A-A7BFBBB67063}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +52,14 @@ Global
 		{92D8F05A-09F7-4897-82E3-9CE2A9D39C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92D8F05A-09F7-4897-82E3-9CE2A9D39C0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92D8F05A-09F7-4897-82E3-9CE2A9D39C0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70F09DCA-D6A0-405F-AF01-641582327A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70F09DCA-D6A0-405F-AF01-641582327A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70F09DCA-D6A0-405F-AF01-641582327A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70F09DCA-D6A0-405F-AF01-641582327A03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4F98038-B3F0-4CE1-AD3A-A7BFBBB67063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4F98038-B3F0-4CE1-AD3A-A7BFBBB67063}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4F98038-B3F0-4CE1-AD3A-A7BFBBB67063}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4F98038-B3F0-4CE1-AD3A-A7BFBBB67063}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

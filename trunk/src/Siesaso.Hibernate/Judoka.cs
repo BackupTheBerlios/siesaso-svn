@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Dotnetuc.NHibernate;
+using Dotnetuc.CsvMapper;
 
 namespace Softwarekueche.Siesaso.Hibernate
 {
@@ -44,48 +45,56 @@ namespace Softwarekueche.Siesaso.Hibernate
 
         private Verein verein;
 
+        [CsvColumn("id")]
         public virtual int Id
         {
             get { return id; }
             set { id = value; }
         }
 
+        [CsvColumn("vorname")]
         public virtual String Vorname
         {
             get { return vorname; }
             set { vorname = value; }
         }
 
+        [CsvColumn("nachname")]
         public virtual String Nachname
         {
             get { return nachname; }
             set { nachname = value; }
         }
 
+        [CsvColumn("zusatz")]
         public virtual String Zusatz
         {
             get { return zusatz; }
             set { zusatz = value; }
         }
 
+        [CsvColumn("geburtsdatum")]
         public virtual DateTime Geburtsdatum
         {
             get { return geburtsdatum; }
             set { geburtsdatum = value; }
         }
 
+        [CsvColumn("gürtel")]
         public virtual Gürtel Gürtel
         {
             get { return gürtel; }
             set { gürtel = value; }
         }
 
+        [CsvColumn("geschlecht")]
         public virtual Geschlecht Geschlecht
         {
             get { return geschlecht; }
             set { geschlecht = value; }
         }
 
+        [CsvColumn("verein")]
         public virtual Verein Verein
         {
             get { return verein; }
