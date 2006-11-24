@@ -8,7 +8,7 @@ namespace Softwarekueche.Siesaso.Hibernate
     /// <summary>
     /// 
     /// </summary>
-    public class Verein : Internal.Entity<Verein>
+    public class Trainer : Internal.Entity<Trainer>
     {
         #region Überschreibungen
 
@@ -28,7 +28,6 @@ namespace Softwarekueche.Siesaso.Hibernate
 
         private int id;
         private String name;
-        private String kurzname;
         private String adresse;
         private String plzort;
         private String email;
@@ -88,16 +87,6 @@ namespace Softwarekueche.Siesaso.Hibernate
         /// <summary>
         /// 
         /// </summary>
-        [CsvColumn("kurzname")]
-        public virtual String Kurzname
-        {
-            get { return kurzname; }
-            set { kurzname = value; }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [CsvColumn("name")]
         public virtual String Name
         {
@@ -117,19 +106,60 @@ namespace Softwarekueche.Siesaso.Hibernate
 
         #endregion
 
-        #region GetHashName
+        #region GetNameHash
 
-        public virtual String GetNameHash()
+        /// <summary>
+        /// Typ zum benutzerdefinierten Zusammenfassen der Namen
+        /// </summary>
+        public enum HashType
         {
-            String res = name.ToLower();
-            String res2 = "";
+            /// <summary>Kein Ändern des String'</summary>
+            None = 0,
+            /// <summary>Zusammenfassen von d'' und 't'</summary>
+            Sum_DT = 1,
+            /// <summary>Zusammenfassen von doppelten Buchstaben</summary>
+            Sum_Double = 2,
+            /// <summary>Alle 'H' entfernen</summary>
+            Sum_NoH = 4
+        }
 
-            for (int i = 0; i < res.Length; i++)
+        /// <summary>
+        /// Funktion zum Zusammenfassen des Namens in einen vergleichbaren String
+        /// </summary>
+        /// <param name="typ">Typ der Zusammenfassung</param>
+        public virtual String GetNameHash(HashType typ)
+        {
+            String res = name;
+            res = res.ToLower();
+
+            if (res.Length == 0) return res;
+
+            if ((typ & HashType.Sum_Double) == HashType.Sum_Double)
             {
-                if (res[i] >= 'a' && res[i] < 'z') res2 = res2 + res[i].ToString();
+                String res2 = res[0].ToString();
+                char last = res[0];
+
+                for (int i = 1; i < res.Length; i++)
+                {
+                    if (res[i] == last) continue;
+
+                    res2 += res[i];
+                    last = res[i];
+                }
+                res = res2;
             }
 
-            return res2;
+            if ((typ & HashType.Sum_DT) == HashType.Sum_DT)
+            {
+                res = res.Replace('d', 't');
+            }
+
+            if ((typ & HashType.Sum_NoH) == HashType.Sum_NoH)
+            {
+                res = res.Replace("h", "");
+            }
+
+            return res;
         }
 
         #endregion

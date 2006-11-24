@@ -4,15 +4,13 @@
                    namespace="Softwarekueche.Siesaso.Hibernate"
                    assembly="Siesaso.Hibernate">
 
-    <class name="Verein">
+    <class name="Trainer">
 
         <id name="Id" type="Int32">
             <generator class="identity" />
         </id>
 
         <property name="Name" type="String" />
-
-        <property name="Kurzname" type="String" />
 
         <property name="Adresse" type="String" />
 

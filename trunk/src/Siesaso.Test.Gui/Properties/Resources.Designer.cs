@@ -95,6 +95,13 @@ namespace Softwarekueche.Siesaso.Test.Gui.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Trainer {
+            get {
+                object obj = ResourceManager.GetObject("Trainer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Turnier {
             get {
                 object obj = ResourceManager.GetObject("Turnier", resourceCulture);

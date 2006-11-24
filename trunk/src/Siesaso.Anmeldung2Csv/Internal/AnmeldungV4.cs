@@ -74,7 +74,7 @@ namespace Softwarekueche.Siesaso.Anmeldung2Csv.Internal
 
                 // Verein auslesen
                 verein.Name = GetSheetValue(worksheet, "B2");
-                verein.Langname = GetSheetValue(worksheet, "B2");
+                verein.Kurzname = GetSheetValue(worksheet, "B2");
                 verein.Email = GetSheetValue(worksheet, "B7");
                 System.Text.StringBuilder sb = new StringBuilder();
                 sb.AppendLine(GetSheetValue(worksheet, "B3"));

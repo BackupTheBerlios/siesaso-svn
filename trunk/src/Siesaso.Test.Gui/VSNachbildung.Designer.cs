@@ -48,14 +48,15 @@ namespace Softwarekueche.Siesaso.Test.Gui
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cSVImportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fensterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.schlieﬂenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alleSchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cSVImportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -175,10 +176,11 @@ namespace Softwarekueche.Siesaso.Test.Gui
             this.toolStripButton4,
             this.toolStripButton5,
             this.toolStripButton6,
-            this.toolStripButton7});
+            this.toolStripButton7,
+            this.toolStripButton8});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(173, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(227, 25);
             this.toolStrip1.TabIndex = 0;
             // 
             // toolStripButton1
@@ -255,6 +257,16 @@ namespace Softwarekueche.Siesaso.Test.Gui
             this.toolStripButton7.Text = "toolStripButton7";
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton8.Image = global::Softwarekueche.Siesaso.Test.Gui.Properties.Resources.Trainer;
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.White;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton8.Text = "toolStripButton8";
+            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -282,29 +294,6 @@ namespace Softwarekueche.Siesaso.Test.Gui
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
-            // fensterToolStripMenuItem
-            // 
-            this.fensterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.schlieﬂenToolStripMenuItem,
-            this.alleSchToolStripMenuItem});
-            this.fensterToolStripMenuItem.Name = "fensterToolStripMenuItem";
-            this.fensterToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.fensterToolStripMenuItem.Text = "Fenster";
-            // 
-            // schlieﬂenToolStripMenuItem
-            // 
-            this.schlieﬂenToolStripMenuItem.Name = "schlieﬂenToolStripMenuItem";
-            this.schlieﬂenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.schlieﬂenToolStripMenuItem.Text = "Schlieﬂen";
-            this.schlieﬂenToolStripMenuItem.Click += new System.EventHandler(this.schlieﬂenToolStripMenuItem_Click);
-            // 
-            // alleSchToolStripMenuItem
-            // 
-            this.alleSchToolStripMenuItem.Name = "alleSchToolStripMenuItem";
-            this.alleSchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.alleSchToolStripMenuItem.Text = "Alle Schlieﬂen";
-            this.alleSchToolStripMenuItem.Click += new System.EventHandler(this.alleSchToolStripMenuItem_Click);
-            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -319,6 +308,29 @@ namespace Softwarekueche.Siesaso.Test.Gui
             this.cSVImportierenToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.cSVImportierenToolStripMenuItem.Text = "CSV Importieren...";
             this.cSVImportierenToolStripMenuItem.Click += new System.EventHandler(this.cSVImportierenToolStripMenuItem_Click);
+            // 
+            // fensterToolStripMenuItem
+            // 
+            this.fensterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.schlieﬂenToolStripMenuItem,
+            this.alleSchToolStripMenuItem});
+            this.fensterToolStripMenuItem.Name = "fensterToolStripMenuItem";
+            this.fensterToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.fensterToolStripMenuItem.Text = "Fenster";
+            // 
+            // schlieﬂenToolStripMenuItem
+            // 
+            this.schlieﬂenToolStripMenuItem.Name = "schlieﬂenToolStripMenuItem";
+            this.schlieﬂenToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.schlieﬂenToolStripMenuItem.Text = "Schlieﬂen";
+            this.schlieﬂenToolStripMenuItem.Click += new System.EventHandler(this.schlieﬂenToolStripMenuItem_Click);
+            // 
+            // alleSchToolStripMenuItem
+            // 
+            this.alleSchToolStripMenuItem.Name = "alleSchToolStripMenuItem";
+            this.alleSchToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.alleSchToolStripMenuItem.Text = "Alle Schlieﬂen";
+            this.alleSchToolStripMenuItem.Click += new System.EventHandler(this.alleSchToolStripMenuItem_Click);
             // 
             // VSNachbildung
             // 
@@ -375,5 +387,6 @@ namespace Softwarekueche.Siesaso.Test.Gui
         private System.Windows.Forms.Splitter splitter3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cSVImportierenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton8;
     }
 }

@@ -84,6 +84,11 @@ namespace Softwarekueche.Siesaso.Test.Gui
             entityEditTabControl1.Edit(Turnier.List(), typeof(TurnierList), "Liste der Turniere");
         }
 
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            entityEditTabControl1.Edit(Trainer.List(), typeof(TrainerList), "Liste der Trainer");
+        }
+
         private void schlieﬂenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (entityEditTabControl1.SelectedTab == null) return;
@@ -144,5 +149,6 @@ namespace Softwarekueche.Siesaso.Test.Gui
                 }
             }
         }
+
     }
 }

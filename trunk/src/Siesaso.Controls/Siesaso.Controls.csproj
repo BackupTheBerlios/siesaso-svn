@@ -36,6 +36,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ListViews\TrainerList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\TrainerList.Designer.cs">
+      <DependentUpon>TrainerList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListViews\TurnierList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -148,6 +154,13 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icons\Kämpfer.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\Trainer.bmp" />
+    <EmbeddedResource Include="ListViews\TrainerList.resx">
+      <DependentUpon>TrainerList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
