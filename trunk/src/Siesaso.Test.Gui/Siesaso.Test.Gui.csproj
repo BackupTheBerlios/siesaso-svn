@@ -105,6 +105,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Dotnetuc.CsvMapper\Dotnetuc.CsvMapper.csproj">
+      <Project>{F4F98038-B3F0-4CE1-AD3A-A7BFBBB67063}</Project>
+      <Name>Dotnetuc.CsvMapper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dotnetuc.NHibernate\Dotnetuc.NHibernate.csproj">
       <Project>{31704FEC-6582-4C99-B2A3-8CF53F8B8E97}</Project>
       <Name>Dotnetuc.NHibernate</Name>

@@ -37,8 +37,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CsvPersisterTest.cs" />
     <Compile Include="EntityPersisterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dotnetuc.CsvMapper\Dotnetuc.CsvMapper.csproj">
+      <Project>{F4F98038-B3F0-4CE1-AD3A-A7BFBBB67063}</Project>
+      <Name>Dotnetuc.CsvMapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dotnetuc.NHibernate\Dotnetuc.NHibernate.csproj">
+      <Project>{31704FEC-6582-4C99-B2A3-8CF53F8B8E97}</Project>
+      <Name>Dotnetuc.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Siesaso.Anmeldung2Csv\Siesaso.Anmeldung2Csv.csproj">
+      <Project>{70F09DCA-D6A0-405F-AF01-641582327A03}</Project>
+      <Name>Siesaso.Anmeldung2Csv</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Siesaso.Controls\Siesaso.Controls.csproj">
+      <Project>{92D8F05A-09F7-4897-82E3-9CE2A9D39C0F}</Project>
+      <Name>Siesaso.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Siesaso.Forms\Siesaso.Forms.csproj">
+      <Project>{D3B58FD4-9608-4904-8F9C-DB5CEB056EA7}</Project>
+      <Name>Siesaso.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Siesaso.Hibernate\Siesaso.Hibernate.csproj">
+      <Project>{7FDB559B-02FB-4D65-A9AB-EFE25E39F6A8}</Project>
+      <Name>Siesaso.Hibernate</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

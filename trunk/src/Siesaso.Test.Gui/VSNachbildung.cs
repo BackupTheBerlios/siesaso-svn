@@ -5,6 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+
+using Dotnetuc.NHibernate;
+using Dotnetuc.CsvMapper;
+
 using Softwarekueche.Siesaso.Hibernate;
 using Softwarekueche.Siesaso.Controls.ListViews;
 
@@ -94,6 +98,51 @@ namespace Softwarekueche.Siesaso.Test.Gui
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cSVImportierenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Datei öffnen
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() != DialogResult.OK) return;
+
+            IList<Judoka> jlst = Judoka.List();
+
+            CsvMapper<Judoka> jcsv = new CsvMapper<Judoka>(ofd.FileName);
+            jcsv.IgnoreErrors = true;
+            List<Judoka> jclst = jcsv.List();
+
+            foreach (Judoka perJ in jlst)
+            {
+                String perJHash = perJ.GetNameHash(Judoka.HashType.None);
+
+                foreach (Judoka csvJ in jclst)
+                {
+                    if (perJHash == csvJ.GetNameHash(Judoka.HashType.None))
+                    {
+                        Console.WriteLine("Persistiert: " + perJ.ToString() + " [" + perJ.Id + "]");
+                        csvJ.Id = perJ.Id;
+                    }
+                }
+            }
+
+            foreach (Judoka csvJ in jclst)
+            {
+                if (csvJ.Id == 0)
+                {
+                    Console.WriteLine("Nicht Persistent: " + csvJ.ToString());
+
+                    if (csvJ.Geschlecht == null || csvJ.Verein == null || csvJ.Gürtel == null)
+                    {
+                        MessageBox.Show("Judoka hat Geschlecht, Verein oder Gürtel NULL");
+                        continue;
+                    }
+                    else
+                    {
+                        csvJ.Save();
+                    }
+                }
+            }
         }
     }
 }

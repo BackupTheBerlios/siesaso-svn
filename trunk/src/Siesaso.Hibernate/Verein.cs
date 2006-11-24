@@ -85,7 +85,7 @@ namespace Softwarekueche.Siesaso.Hibernate
         #endregion
 
 
-        public string GetNameHash()
+        public virtual String GetNameHash()
         {
             String res = name.ToLower();
             String res2 = "";

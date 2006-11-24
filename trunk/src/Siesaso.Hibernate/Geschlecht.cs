@@ -19,6 +19,36 @@ namespace Softwarekueche.Siesaso.Hibernate
 
         #endregion
 
+        #region Konstruktoren 
+
+        public Geschlecht()
+            : base()
+        {
+        }
+
+        public Geschlecht(String geschlecht)
+            : this()
+        {
+            if (geschlecht.ToLower() == "m")
+            {
+                kurz = "m";
+                lang = "männlich";
+
+            }
+            else if (geschlecht.ToLower() == "w")
+            {
+                kurz = "w";
+                lang = "weiblich";
+            }
+            else
+            {
+                kurz = "x";
+                lang = "unbekannt";
+            }
+        }
+
+        #endregion
+
         #region Mapping
 
         private String kurz;

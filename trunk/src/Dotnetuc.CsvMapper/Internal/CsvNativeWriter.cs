@@ -104,11 +104,11 @@ namespace Dotnetuc.CsvMapper.Internal
 				// Wert mit Hochkommas
 				if (value == null)
 				{
-                    currentItem += ";\"\"";
+                    currentItem += "\"\"";
 				}
 				else
 				{
-                    currentItem += ";\"" + value.ToString() + "\"";
+                    currentItem += "\"" + value.ToString() + "\"";
 				}
 			}
 

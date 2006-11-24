@@ -55,14 +55,15 @@ namespace Dotnetuc.CsvMapper.Internal
 			StreamReader s = new StreamReader(fileName, encoding);
 			// Header lesen
 			string tmpHdr = s.ReadLine();
-			if (tmpHdr == null) return; // TODO: might not be correct. Was : Exit Sub
+			if (tmpHdr == null) return; 
 
 
-            string[] tmpHdrs = tmpHdr.Split(new String[] { ("\",\"") }, StringSplitOptions.None);
+            string[] tmpHdrs = tmpHdr.Split(new String[] { ("\";\"") }, StringSplitOptions.None);
 
 			headerArray = tmpHdrs;
 
 			for (int i = 0; i <= tmpHdrs.Length - 1; i++) {
+                tmpHdrs[i] = tmpHdrs[i].Replace("\"", "");
 				header.Add(new CsvHeaderInfo(i, tmpHdrs[i]));
 			}
 
@@ -96,7 +97,12 @@ namespace Dotnetuc.CsvMapper.Internal
             {
                 header = new List<CsvHeaderInfo>();
                 string tmpLne = csvFile.ReadLine();
-                string[] tmpLnes = tmpLne.Split(new String[] { ("\",\"") }, StringSplitOptions.None);
+                string[] tmpLnes = tmpLne.Split(new String[] { (";") }, StringSplitOptions.None);
+
+                for (int i = 0; i < tmpLnes.Length; i++)
+                {
+                    tmpLnes[i] = tmpLnes[i].Replace("\"", "");
+                }
 
                 return new CsvFileItem(tmpLnes, headerArray);
    

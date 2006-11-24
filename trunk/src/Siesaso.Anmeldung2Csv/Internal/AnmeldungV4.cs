@@ -90,6 +90,18 @@ namespace Softwarekueche.Siesaso.Anmeldung2Csv.Internal
                     Judoka j = new Judoka();
                     j.Vorname = GetSheetValue(worksheet, GetJudokaCell(counter, "C"));
                     j.Nachname = GetSheetValue(worksheet, GetJudokaCell(counter, "B"));
+                    try
+                    {
+                        j.Geburtsdatum = DateTime.Parse(GetSheetValue(worksheet, GetJudokaCell(counter, "F")));
+                    }
+                    catch (Exception)
+                    {
+                        j.Geburtsdatum = new DateTime(1900,1,1);
+                    }
+
+                    j.Gürtel = new Gürtel(GetSheetValue(worksheet, GetJudokaCell(counter, "D")), "9");
+                    j.Geschlecht = new Geschlecht(GetSheetValue(worksheet, GetJudokaCell(counter, "E")));
+                    j.Verein = verein;
 
                     judoka.Add(j);
                     counter++;

@@ -25,6 +25,31 @@ namespace Softwarekueche.Siesaso.Hibernate
 
         #endregion
 
+        #region Konstruktoren
+
+        public Gürtel()
+            : base()
+        {
+        }
+
+        public Gürtel(String gürtel, String def)
+            : this()
+        {
+            if (gürtel == "") gürtel = def; //Default Gürtel
+
+            int gürtelNummer = 0;
+            if (int.TryParse(gürtel, out gürtelNummer) && gürtelNummer != 0)
+            {
+                this.nummer = gürtelNummer;
+            }
+            else
+            {
+                this.nummer = 0;
+            }
+        }
+
+        #endregion
+
         #region Mapping
 
         private int id;
@@ -35,7 +60,7 @@ namespace Softwarekueche.Siesaso.Hibernate
 
         private int nummer;
 
-        
+
         public virtual int Id
         {
             get { return id; }

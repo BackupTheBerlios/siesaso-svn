@@ -19,7 +19,7 @@ namespace Softwarekueche.Siesaso.Anmeldung2Csv
 
                 System.IO.FileInfo fi = new System.IO.FileInfo(arg);
 
-                Internal.AnmeldungV4 av4 = new Internal.AnmeldungV4(arg);
+                Internal.AnmeldungV4 av4 = new Internal.AnmeldungV4(fi.FullName);
 
                 Console.WriteLine(av4.Verein.Name + "  -> " + av4.Verein.GetNameHash());
 

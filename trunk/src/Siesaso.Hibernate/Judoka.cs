@@ -20,7 +20,7 @@ namespace Softwarekueche.Siesaso.Hibernate
 
         public override string ToString()
         {
-            if (zusatz == null) return vorname + " " + nachname;
+            if (zusatz == null || zusatz.ToString() == "") return vorname + " " + nachname;
             else return vorname + " '" + zusatz + "' " + nachname;
         }
 
@@ -79,25 +79,94 @@ namespace Softwarekueche.Siesaso.Hibernate
             set { geburtsdatum = value; }
         }
 
-        [CsvColumn("gürtel")]
         public virtual Gürtel Gürtel
         {
             get { return gürtel; }
             set { gürtel = value; }
         }
 
-        [CsvColumn("geschlecht")]
         public virtual Geschlecht Geschlecht
         {
             get { return geschlecht; }
             set { geschlecht = value; }
         }
 
-        [CsvColumn("verein")]
         public virtual Verein Verein
         {
             get { return verein; }
             set { verein = value; }
+        }
+
+        #endregion
+
+        #region Pseudo Properties
+
+        [CsvColumn("gürtel")]
+        public virtual String GürtelString
+        {
+            get
+            {
+                return gürtel.Nummer.ToString();
+            }
+            set
+            {
+                foreach (Gürtel tst in Gürtel.List())
+                {
+                    if (tst.Nummer.ToString() == value.ToLower())
+                    {
+                        gürtel = tst;
+                        return;
+                    }
+                }
+
+                gürtel = null;
+            }
+        }
+
+        [CsvColumn("verein")]
+        public virtual String VereinString
+        {
+            get
+            {
+                return verein.Name;
+            }
+            set
+            {
+                Verein valueVerein = new Verein();
+                valueVerein.Name = value;
+
+                // Finden des Vereins nach HashNamen
+                foreach (Verein tst in Verein.List())
+                {
+                    if (tst.GetNameHash() == valueVerein.GetNameHash())
+                    {
+                        verein = tst;
+                        return;
+                    }
+                }
+                verein = null;
+            }
+        }
+
+        [CsvColumn("geschlecht")]
+        public virtual String GeschlechtString
+        {
+            get
+            {
+                return geschlecht.Kurz;
+            }
+            set
+            {
+                foreach (Geschlecht tst in Geschlecht.List())
+                {
+                    if (tst.Kurz.ToLower() == value.ToLower())
+                    {
+                        geschlecht = tst;
+                        return;
+                    }
+                }
+                geschlecht = null;
+            }
         }
 
         #endregion
@@ -109,6 +178,8 @@ namespace Softwarekueche.Siesaso.Hibernate
         /// </summary>
         public enum HashType
         {
+            /// <summary>Kein Ändern des String'</summary>
+            None = 0,
             /// <summary>Zusammenfassen von d'' und 't'</summary>
             Sum_DT = 1,
             /// <summary>Zusammenfassen von doppelten Buchstaben</summary>
@@ -121,11 +192,11 @@ namespace Softwarekueche.Siesaso.Hibernate
         /// Funktion zum Zusammenfassen des Namens in einen vergleichbaren String
         /// </summary>
         /// <param name="typ">Typ der Zusammenfassung</param>
-        public String GetNameHash(HashType typ)
+        public virtual String GetNameHash(HashType typ)
         {
             String res = vorname;
-            if (zusatz != "") res += " " + zusatz;
-            res += nachname;
+            if (zusatz != null && zusatz.ToString() != "") res += " " + zusatz;
+            res += " " + nachname;
             res = res.ToLower();
 
             if (res.Length == 0) return res;

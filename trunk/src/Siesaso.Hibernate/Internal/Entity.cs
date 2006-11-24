@@ -32,7 +32,7 @@ namespace Softwarekueche.Siesaso.Hibernate.Internal
             Session.Instance.Get.Delete(this);
             Session.Instance.Get.Flush();
         }
-
+        
         /// <summary>
         /// Speichert das Objekt in Hibernate / der Datenbank
         /// </summary>
