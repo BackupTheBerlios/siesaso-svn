@@ -19,7 +19,8 @@ namespace Softwarekueche.Siesaso.Anmeldung2Csv
 
                 System.IO.FileInfo fi = new System.IO.FileInfo(arg);
 
-                Internal.AnmeldungV4 av4 = new Internal.AnmeldungV4(fi.FullName);
+                // Todo Proxy zum Generieren der richtigen Instanz (v4, v3 ...)
+                IAnmeldung av4 = new Internal.AnmeldungV4(fi.FullName);
 
                 Console.WriteLine(av4.Verein.Name + "  -> " + av4.Verein.GetNameHash());
 
@@ -32,11 +33,18 @@ namespace Softwarekueche.Siesaso.Anmeldung2Csv
                 List<Verein> vl = new List<Verein>();
                 vl.Add(av4.Verein);
 
-                CsvPersister<Verein> cpv = new CsvPersister<Verein>(fi.Directory + "\\" + av4.Verein.GetNameHash() + "_verein.csv");
+                List<Trainer> vt = new List<Trainer>();
+                vt.Add(av4.Trainer);
+
+                CsvPersister<Verein> cpv = new CsvPersister<Verein>(fi.Directory + "\\" + av4.Verein.GetNameHash() + ".verein.csv");
                 cpv.Persist(vl);
                 Console.WriteLine("Ausgabe Verein: " + cpv.CsvFile);
 
-                CsvPersister<Judoka> cpj = new CsvPersister<Judoka>(fi.Directory + "\\" + av4.Verein.GetNameHash() + "_judoka.csv");
+                CsvPersister<Trainer> cpt = new CsvPersister<Trainer>(fi.Directory + "\\" + av4.Verein.GetNameHash() + ".trainer.csv");
+                cpt.Persist(vt);
+                Console.WriteLine("Ausgabe Trainer: " + cpt.CsvFile);
+
+                CsvPersister<Judoka> cpj = new CsvPersister<Judoka>(fi.Directory + "\\" + av4.Verein.GetNameHash() + ".judoka.csv");
                 cpj.Persist(av4.Judoka);
                 Console.WriteLine("Ausgabe Judoka: " + cpj.CsvFile);
             }

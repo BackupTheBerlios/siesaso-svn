@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnetuc.NHibernate", "Dotnetuc.NHibernate\Dotnetuc.NHibernate.csproj", "{31704FEC-6582-4C99-B2A3-8CF53F8B8E97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siesaso.Forms", "Siesaso.Forms\Siesaso.Forms.csproj", "{D3B58FD4-9608-4904-8F9C-DB5CEB056EA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnetuc.Forms", "Dotnetuc.Forms\Dotnetuc.Forms.csproj", "{D3B58FD4-9608-4904-8F9C-DB5CEB056EA7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siesaso.Controls", "Siesaso.Controls\Siesaso.Controls.csproj", "{92D8F05A-09F7-4897-82E3-9CE2A9D39C0F}"
 EndProject

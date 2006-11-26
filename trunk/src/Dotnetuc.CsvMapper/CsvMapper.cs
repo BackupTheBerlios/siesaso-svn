@@ -151,6 +151,7 @@ namespace Dotnetuc.CsvMapper
                     try
                     {
                         val = cur.Item(cfi.CsvAttribute.csvColumn);
+                        cfi.PropertyInfo.SetValue(tmp, Internal.TypeConverter.Parse(val, cfi.PropertyInfo.PropertyType), BindingFlags.Public | BindingFlags.SetField | BindingFlags.Instance, null, null, CultureInfo.CurrentCulture);
                     }
                     catch (Exception ex)
                     {
@@ -158,37 +159,7 @@ namespace Dotnetuc.CsvMapper
                         if (!this.IgnoreErrors) throw;
                         val = null;
                     }
-
-                    //cfi.PropertyInfo.SetValue(tmp, ctype(val, cfi.PropertyInfo.PropertyType.UnderlyingSystemType), BindingFlags.Public | BindingFlags.SetField | BindingFlags.Instance, null, null, CultureInfo.CurrentCulture);
-                    if (cfi.PropertyInfo.PropertyType.FullName == "System.Int32")
-                    {
-                        cfi.PropertyInfo.SetValue(tmp, int.Parse(val.ToString()), BindingFlags.Public | BindingFlags.SetField | BindingFlags.Instance, null, null, CultureInfo.CurrentCulture);
-                    }
-                    else if (cfi.PropertyInfo.PropertyType.FullName == "System.DateTime")
-                    {
-                        DateTime foo = DateTime.Now;
-                        if (DateTime.TryParse(val.ToString(), out foo))
-                        {
-                            cfi.PropertyInfo.SetValue(tmp, DateTime.Parse(val.ToString()), BindingFlags.Public | BindingFlags.SetField | BindingFlags.Instance, null, null, CultureInfo.CurrentCulture);
-                        }
-                        else
-                        {
-                            cfi.PropertyInfo.SetValue(tmp, new DateTime(1900,1,1), BindingFlags.Public | BindingFlags.SetField | BindingFlags.Instance, null, null, CultureInfo.CurrentCulture);
-                        }
-                    }
-                    else
-                    {
-                        try
-                        {
-                            cfi.PropertyInfo.SetValue(tmp, val, BindingFlags.Public | BindingFlags.SetField | BindingFlags.Instance, null, null, CultureInfo.CurrentCulture);
-                        }
-                        catch (Exception)
-                        {
-                            //throw;
-                        }
-                    }
                 }
-
                 res.Add(tmp);
             }
 

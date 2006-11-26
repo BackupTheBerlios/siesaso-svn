@@ -85,6 +85,15 @@
     <Compile Include="ListViews\VereinList.Designer.cs">
       <DependentUpon>VereinList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Strips\ListViewStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Strips\ListViewStripEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ListViews\GürtelList.resx">
@@ -97,9 +106,9 @@
       <Project>{31704FEC-6582-4C99-B2A3-8CF53F8B8E97}</Project>
       <Name>Dotnetuc.NHibernate</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Siesaso.Forms\Siesaso.Forms.csproj">
+    <ProjectReference Include="..\Dotnetuc.Forms\Dotnetuc.Forms.csproj">
       <Project>{D3B58FD4-9608-4904-8F9C-DB5CEB056EA7}</Project>
-      <Name>Siesaso.Forms</Name>
+      <Name>Dotnetuc.Forms</Name>
     </ProjectReference>
     <ProjectReference Include="..\Siesaso.Hibernate\Siesaso.Hibernate.csproj">
       <Project>{7FDB559B-02FB-4D65-A9AB-EFE25E39F6A8}</Project>
@@ -160,6 +169,15 @@
     <EmbeddedResource Include="ListViews\TrainerList.resx">
       <DependentUpon>TrainerList.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strips\ListViewStrip.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ListViewStrip.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

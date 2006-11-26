@@ -7,8 +7,8 @@
     <ProjectGuid>{D3B58FD4-9608-4904-8F9C-DB5CEB056EA7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Softwarekueche.Siesaso.Forms</RootNamespace>
-    <AssemblyName>Siesaso.Forms</AssemblyName>
+    <RootNamespace>Dotnetuc.Forms</RootNamespace>
+    <AssemblyName>Dotnetuc.Forms</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,16 +64,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Dotnetuc.NHibernate\Dotnetuc.NHibernate.csproj">
-      <Project>{31704FEC-6582-4C99-B2A3-8CF53F8B8E97}</Project>
-      <Name>Dotnetuc.NHibernate</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Siesaso.Hibernate\Siesaso.Hibernate.csproj">
-      <Project>{7FDB559B-02FB-4D65-A9AB-EFE25E39F6A8}</Project>
-      <Name>Siesaso.Hibernate</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\DataSources\Siesaso.Hibernate.Gürtel.datasource" />

@@ -46,6 +46,7 @@
     <Compile Include="Internal\CsvHeaderInfo.cs" />
     <Compile Include="Internal\CsvNativeReader.cs" />
     <Compile Include="Internal\CsvNativeWriter.cs" />
+    <Compile Include="Internal\TypeConverter.cs" />
     <Compile Include="InvalidCsvFileException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Softwarekueche.Siesaso.Forms
+namespace Dotnetuc.Forms
 {
     /// <summary>
     /// TabPage mit einer Entity-Edit-Control Eigenschaft

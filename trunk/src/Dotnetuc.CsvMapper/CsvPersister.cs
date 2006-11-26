@@ -152,6 +152,7 @@ namespace Dotnetuc.CsvMapper
 
             foreach (keyType t in list)
             {
+                if (t == null) continue;
 
                 foreach (CsvFieldInfo cfi in _fieldInfos)
                 {

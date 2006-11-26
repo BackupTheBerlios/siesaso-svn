@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
-using Softwarekueche.Siesaso.Forms;
 
-namespace Softwarekueche.Siesaso.Forms
+namespace Dotnetuc.Forms
 {
     /// <summary>
     /// TabControl mit einer Methode zum Bearbeiten von Entitäten.

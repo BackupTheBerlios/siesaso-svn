@@ -7,10 +7,11 @@ namespace Softwarekueche.Siesaso.Anmeldung2Csv.Internal
 {
     class AnmeldungV4 : IAnmeldung
     {
-
         private String fileName = null;
 
         private Verein verein = null;
+
+        private Trainer trainer = null;
 
         private List<Judoka> judoka = null;
 
@@ -96,7 +97,7 @@ namespace Softwarekueche.Siesaso.Anmeldung2Csv.Internal
                     }
                     catch (Exception)
                     {
-                        j.Geburtsdatum = new DateTime(1900,1,1);
+                        j.Geburtsdatum = new DateTime(1900, 1, 1);
                     }
 
                     j.Gürtel = new Gürtel(GetSheetValue(worksheet, GetJudokaCell(counter, "D")), "9");
@@ -124,9 +125,14 @@ namespace Softwarekueche.Siesaso.Anmeldung2Csv.Internal
 
         #region IAnmeldung Members
 
-        public Softwarekueche.Siesaso.Hibernate.Verein Verein
+        public Verein Verein
         {
             get { return verein; }
+        }
+
+        public Trainer Trainer
+        {
+            get { return trainer; }
         }
 
         public List<Softwarekueche.Siesaso.Hibernate.Judoka> Judoka

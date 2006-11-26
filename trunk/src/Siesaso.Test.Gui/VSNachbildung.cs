@@ -49,46 +49,6 @@ namespace Softwarekueche.Siesaso.Test.Gui
             bindingSource1.DataSource = arrayList;
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            entityEditTabControl1.Edit(Gürtel.List(), typeof(GürtelList), "Gürtel");
-        }
-
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            entityEditTabControl1.Edit(Verein.List(), typeof(VereinList), "Vereine");
-        }
-
-        private void toolStripButton3_Click(object sender, EventArgs e)
-        {
-            entityEditTabControl1.Edit(Geschlecht.List(), typeof(GeschlechtList), "Geschlechter");
-        }
-
-        private void toolStripButton4_Click(object sender, EventArgs e)
-        {
-            entityEditTabControl1.Edit(Judoka.List(), typeof(JudokaList), "Judokas");
-        }
-
-        private void toolStripButton5_Click(object sender, EventArgs e)
-        {
-            entityEditTabControl1.Edit(Klasse.List(), typeof(KlasseList), "Wettkampfklassen");
-        }
-
-        private void toolStripButton6_Click(object sender, EventArgs e)
-        {
-            entityEditTabControl1.Edit(Kämpfer.List(), typeof(KämpferList), "Liste der Kämpfer");
-        }
-
-        private void toolStripButton7_Click(object sender, EventArgs e)
-        {
-            entityEditTabControl1.Edit(Turnier.List(), typeof(TurnierList), "Liste der Turniere");
-        }
-
-        private void toolStripButton8_Click(object sender, EventArgs e)
-        {
-            entityEditTabControl1.Edit(Trainer.List(), typeof(TrainerList), "Liste der Trainer");
-        }
-
         private void schließenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (entityEditTabControl1.SelectedTab == null) return;
@@ -148,6 +108,11 @@ namespace Softwarekueche.Siesaso.Test.Gui
                     }
                 }
             }
+        }
+
+        private void listViewStrip1_ToolButtonClicked(object sender, Softwarekueche.Siesaso.Controls.Strips.ListViewStripEventArgs e)
+        {
+            entityEditTabControl1.Edit(e.Entity, e.EntityEditControl, "");
         }
 
     }

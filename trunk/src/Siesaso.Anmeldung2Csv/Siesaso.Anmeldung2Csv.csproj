@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Internal\AnmeldungV4.cs" />
-    <Compile Include="Internal\IAnmeldung.cs" />
+    <Compile Include="IAnmeldung.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

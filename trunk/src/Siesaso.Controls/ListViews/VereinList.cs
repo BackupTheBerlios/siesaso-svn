@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
-using Softwarekueche.Siesaso.Forms;
+using Dotnetuc.Forms;
 using Softwarekueche.Siesaso.Hibernate;
 
 namespace Softwarekueche.Siesaso.Controls.ListViews

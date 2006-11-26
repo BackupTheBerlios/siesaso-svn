@@ -118,9 +118,9 @@
       <Project>{92D8F05A-09F7-4897-82E3-9CE2A9D39C0F}</Project>
       <Name>Siesaso.Controls</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Siesaso.Forms\Siesaso.Forms.csproj">
+    <ProjectReference Include="..\Dotnetuc.Forms\Dotnetuc.Forms.csproj">
       <Project>{D3B58FD4-9608-4904-8F9C-DB5CEB056EA7}</Project>
-      <Name>Siesaso.Forms</Name>
+      <Name>Dotnetuc.Forms</Name>
     </ProjectReference>
     <ProjectReference Include="..\Siesaso.Hibernate\Siesaso.Hibernate.csproj">
       <Project>{7FDB559B-02FB-4D65-A9AB-EFE25E39F6A8}</Project>
