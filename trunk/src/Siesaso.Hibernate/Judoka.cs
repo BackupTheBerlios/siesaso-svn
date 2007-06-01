@@ -99,7 +99,7 @@ namespace Softwarekueche.Siesaso.Hibernate
 
         #endregion
 
-        #region Pseudo Properties
+        #region Pseudo Properties fürs Mapping
 
         [CsvColumn("gürtel")]
         public virtual String GürtelString
@@ -138,7 +138,8 @@ namespace Softwarekueche.Siesaso.Hibernate
                 // Finden des Vereins nach HashNamen
                 foreach (Verein tst in Verein.List())
                 {
-                    if (tst.GetNameHash() == valueVerein.GetNameHash())
+                    if (tst.GetNameHash() == valueVerein.GetNameHash() ||
+                        tst.GetKurzNameHash() == valueVerein.GetNameHash())
                     {
                         verein = tst;
                         return;

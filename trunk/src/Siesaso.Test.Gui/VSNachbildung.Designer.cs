@@ -82,6 +82,7 @@ namespace Softwarekueche.Siesaso.Test.Gui
             // 
             // entityEditTabControl1
             // 
+            this.entityEditTabControl1.ContextRegisterMenuStrip = null;
             this.entityEditTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.entityEditTabControl1.Location = new System.Drawing.Point(206, 0);
             this.entityEditTabControl1.Name = "entityEditTabControl1";

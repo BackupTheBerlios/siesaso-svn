@@ -32,6 +32,11 @@ namespace Softwarekueche.Siesaso.Hibernate
         {
         }
 
+        /// <summary>
+        /// Erzeugen eines neuen Gürtels auf des Basis der Gürtelnummer.
+        /// </summary>
+        /// <param name="gürtel"></param>
+        /// <param name="def"></param>
         public Gürtel(String gürtel, String def)
             : this()
         {

@@ -53,6 +53,9 @@ namespace Softwarekueche.Siesaso.Anmeldung2Csv.Internal
 
         #endregion
 
+        /// <summary>
+        /// Erzeugt die Listen mit den Objekten aus der Anmeldung.
+        /// </summary>
         public void Generate()
         {
             // Variablen initialisieren
@@ -93,7 +96,7 @@ namespace Softwarekueche.Siesaso.Anmeldung2Csv.Internal
                     j.Nachname = GetSheetValue(worksheet, GetJudokaCell(counter, "B"));
                     try
                     {
-                        j.Geburtsdatum = DateTime.Parse(GetSheetValue(worksheet, GetJudokaCell(counter, "F")));
+                        j.Geburtsdatum = DateTime.FromOADate(double.Parse(GetSheetValue(worksheet, GetJudokaCell(counter, "F"))));
                     }
                     catch (Exception)
                     {

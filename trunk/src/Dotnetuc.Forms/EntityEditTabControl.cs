@@ -15,6 +15,18 @@ namespace Dotnetuc.Forms
         private ImageList images;
         private System.ComponentModel.IContainer components;
 
+        #region ContextRegisterMenuStrip
+
+        private ContextMenuStrip contextRegisterMenuStrip;
+
+        public ContextMenuStrip ContextRegisterMenuStrip
+        {
+            get { return contextRegisterMenuStrip; }
+            set { contextRegisterMenuStrip = value; }
+        }
+
+        #endregion
+
         #region Methoden zum Verwalten der TabPages
 
         /// <summary>
@@ -128,7 +140,7 @@ namespace Dotnetuc.Forms
                 case MouseButtons.None:
                     break;
                 case MouseButtons.Right:
-                    MessageBox.Show("ContextMenü einbinden");
+                    this.ContextRegisterMenuStrip.Show();
                     break;
                 case MouseButtons.XButton1:
                     break;

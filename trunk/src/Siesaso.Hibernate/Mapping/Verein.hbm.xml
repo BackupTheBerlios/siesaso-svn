@@ -24,6 +24,8 @@
 
         <property name="Fax" type="String" />
 
+        <property name="NameAlternativ" type="String" />
+
     </class>
     
     

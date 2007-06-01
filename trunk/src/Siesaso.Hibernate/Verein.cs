@@ -34,6 +34,17 @@ namespace Softwarekueche.Siesaso.Hibernate
         private String email;
         private String tel;
         private String fax;
+        private String nameAlternativ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [CsvColumn("nameAlternativ")]
+        public virtual String NameAlternativ
+        {
+            get { return nameAlternativ; }
+            set { nameAlternativ = value; }
+        }
 
         /// <summary>
         /// 
@@ -122,6 +133,19 @@ namespace Softwarekueche.Siesaso.Hibernate
         public virtual String GetNameHash()
         {
             String res = name.ToLower();
+            String res2 = "";
+
+            for (int i = 0; i < res.Length; i++)
+            {
+                if (res[i] >= 'a' && res[i] < 'z') res2 = res2 + res[i].ToString();
+            }
+
+            return res2;
+        }
+
+        public virtual String GetKurzNameHash()
+        {
+            String res = kurzname.ToLower();
             String res2 = "";
 
             for (int i = 0; i < res.Length; i++)
